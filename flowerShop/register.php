@@ -1,3 +1,4 @@
+
 <?php 
     include 'connection.php';
 
@@ -15,6 +16,7 @@
         $cpassword = mysqli_real_escape_string($conn, $filter_cpassword);
 
 
+        //fjffjffjv
         //$select_user = mysqli_query($conn,"SELECT * FROM 'users' WHERE email = '$email'") or die('query failed');
         $select_user = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'") or die('query failed');
         //mysqli_query($conn, "INSERT INTO `users` (`name`, `email`, `password`) VALUES ('$name','$email','$password')") or die('query failed');
