@@ -13,7 +13,7 @@
         //$select_user = mysqli_query($conn,"SELECT * FROM 'users' WHERE email = '$email'") or die('query failed');
         $select_user = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'") or die('query failed');
         //mysqli_query($conn, "INSERT INTO `users` (`name`, `email`, `password`) VALUES ('$name','$email','$password')") or die('query failed');
-
+      //fyvghioinj
 
         if(mysqli_num_rows($select_user) > 0){
             $row = mysqli_fetch_assoc($select_user);
