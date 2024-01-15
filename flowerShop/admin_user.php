@@ -20,7 +20,7 @@
         header('location:admin_user.php');
     }
 
-
+/*--*/
 
 ?>
 <!DOCTYPE html>
