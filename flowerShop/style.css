@@ -29,7 +29,7 @@ a{
     text-decoration: none;
 }
 .form-container{
-    background-image: url('image/girl6.jpg');
+    background-image: url('image/newgirl.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -62,7 +62,7 @@ textarea{
 }
 form .btn{
     cursor: pointer;
-    background: #313aad;
+    background:  #550A35;
     color: #fff;
     text-transform: uppercase;
 }
