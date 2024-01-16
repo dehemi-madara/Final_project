@@ -27,10 +27,10 @@
     padding: .5rem 0;
     cursor: pointer;
 }
-.order-container form input{
+.order-container form input .btn{
     box-shadow: none;
-    width: 43%;
+    width: 30%;
 }
 .box-container .btn{
-    padding: 1rem ;
+    padding: 0.2rem ;
 }
