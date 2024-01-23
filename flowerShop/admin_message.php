@@ -20,7 +20,6 @@
         header('location:admin_user.php');
     }
 
-/*--*/
 
 ?>
 <!DOCTYPE html>
@@ -34,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet"type = "text/css"href = "styleadmin.css">
     <link rel="stylesheet"type="text/css"href= "styleorder.css">
+    <link rel="stylesheet"type="text/css"href="styleMessage.css">
     <title>admin pannel</title>
 </head>
 <body>
@@ -54,22 +54,25 @@
         <hi class="title">total registered users</hi>
         <div class="box-container">
             <?php
-                $select_massage = mysqli_query($conn, "SELECT * FROM `massage`") or die('query failed');
-                if(mysqli_num_rows($select_massage) > 0){
-                    while($fetch_massage = mysqli_fetch_assoc($select_massage)){
+                $select_message = mysqli_query($conn, "SELECT * FROM `message`") or die('query failed');
+                if(mysqli_num_rows($select_message) > 0){
+                    while($fetch_message = mysqli_fetch_assoc($select_message)){
                   
 
             ?>
             <div class="box">
-                <p>user id: <span><?php echo $fetch_massage['id'];?></span></p>
-                <p>user name : <span><?php echo $fetch_massage['name'];?></span></p>
-                <p>email: <span><?php echo $fetch_massage['email'];?></span></p>
-                <p><?php echo $fetch_massage['email'];?></p>
-                <a href="admin_user.php?delete=<?php echo $fetch_users['id']; ?>" class="delete" onclick="return confirm('delete this')"></a>
+                <p>user id: <span><?php echo $fetch_message['id'];?></span></p>
+                <p>user name : <span><?php echo $fetch_message['name'];?></span></p>
+                <p>email: <span><?php echo $fetch_message['email'];?></span></p>
+                <p><?php echo $fetch_message['message'];?></p>
+                <a href="admin_user.php?delete=<?php echo $fetch_users['id']; ?>" class="delete" onclick="return 
+                confirm('delete this')"></a>
             </div>
             <?php 
                     }
-                } echo 'no massage yet';
+                }else{
+                    echo 'no message yet';
+                }
 
             ?>
         </div>
