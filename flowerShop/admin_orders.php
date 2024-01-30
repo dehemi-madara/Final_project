@@ -41,9 +41,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet"type = "text/css"href = "styleadmin.css">
-    <link rel="stylesheet"type="text/css"href= "styleorder.css">
+    <link rel="stylesheet" type="text/css" href="styleHeader.css">
+    <link rel="stylesheet" type="text/css" href="styleOrders.css">
+    <link rel="stylesheet" type="text/css" href="styleDashboard.css">
+    <link rel="stylesheet" type="text/css" href="styleAdminPro.css">
+    <link rel="stylesheet" type="text/css" href="styleeditp.css">
+    <link rel="stylesheet" type="text/css" href="styleLogin.css">
     <title>admin pannel</title>
 </head>
 <body>
@@ -61,7 +64,7 @@
         }
     ?>
     <section class="order-container">
-        <hi class="title">total placed orders</hi>
+        <h1 class="title">total placed orders</h1>
         <div class="box-container">
             <?php
                 $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
@@ -76,7 +79,7 @@
                 <p>placed on: <span><?php echo $fetch_orders['placed_on'];?></span></p>
                 <p>number: <span><?php echo $fetch_orders['number'];?></span></p>
                 <p>email: <span><?php echo $fetch_orders['email'];?></span></p>
-                <p>total price: $<span><?php echo $fetch_orders['total_price'];?>/-</span></p>
+                <p>total price: Rs. <span><?php echo $fetch_orders['total_price'];?>/-</span></p>
                 <p>method: <span><?php echo $fetch_orders['method'];?></span></p>
                 <p>address: <span><?php echo $fetch_orders['address'];?></span></p>
                 <p>total products: <span><?php echo $fetch_orders['total_products'];?></span></p>
@@ -88,8 +91,7 @@
                         <option value="completed">Completed</option>
                     </select>
                     <input type="submit" name="update_order" value="update" class="btn">
-                    <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" 
-                    class="delete" onclick="return confirm('delete this')"></a>
+                    <a href="admin_order.php?delete=<?php echo $fetch_orders['id']; ?>" class="delete" onclick="return conform('delete this')">delete</a>
                 </form>
             </div>
             <?php 

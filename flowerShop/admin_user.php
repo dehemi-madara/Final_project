@@ -19,9 +19,6 @@
 
         header('location:admin_user.php');
     }
-
-/*--*/
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,9 +28,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet"type = "text/css"href = "styleadmin.css">
-    <link rel="stylesheet"type="text/css"href= "styleorder.css">
+    <link rel="stylesheet" type="text/css" href="styleHeader.css">
+    <link rel="stylesheet" type="text/css" href="styleOrders.css">
+    <link rel="stylesheet" type="text/css" href="styleDashboard.css">
+    <link rel="stylesheet" type="text/css" href="styleAdminPro.css">
+    <link rel="stylesheet" type="text/css" href="styleeditp.css">
+    <link rel="stylesheet" type="text/css" href="styleUser.css">
     <title>admin pannel</title>
 </head>
 <body>
@@ -51,9 +51,9 @@
         }
     ?>
     <section class="user-container">
-        <hi class="title">total registered users</hi>
+        <h1 class="title">total registered users</h1>
         <div class="box-container">
-            <?php
+        <?php
                 $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
                 if(mysqli_num_rows($select_users) > 0){
                     while($fetch_users = mysqli_fetch_assoc($select_users)){
@@ -61,12 +61,13 @@
 
             ?>
             <div class="box">
-                <p>user id: <span><?php echo $fetch_users['id'];?></span></p>
-                <p>user name : <span><?php echo $fetch_users['name'];?></span></p>
-                <p>email: <span><?php echo $fetch_users['email'];?></span></p>
-                <p>user type: <span style="color:<?php if ($fetch_users['user_type']=='admin'){echo 'orange';};?>">
-                <?php echo $fetch_users['user_type'];?></span></p>
-                <a href="admin_user.php?delete=<?php echo $fetch_users['id']; ?>" class="delete" onclick="return confirm('delete this')"></a>
+                <p>user id: <span><?php echo $fetch_users['id']; ?></span></p>
+                <p>user name: <span><?php echo $fetch_users['name']; ?></span></p>
+                <p>email: <span><?php echo $fetch_users['email']; ?></span></p>
+                <p>user type: <span style="color:<?php if($fetch_users['user_type']=='admin'){echo 'orange';}; ?>">
+                <?php echo $fetch_users['user_type']; ?></span></p>
+                <a href="admin_user.php?delete=<?php echo $fetch_users['id']; ?>" class="delete" onclick = "
+                    return conform('delete');">delete</a>
             </div>
             <?php 
                     }

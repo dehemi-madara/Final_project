@@ -10,10 +10,8 @@
         $filter_password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
         $password= mysqli_real_escape_string($conn, $filter_password);
 
-        //$select_user = mysqli_query($conn,"SELECT * FROM 'users' WHERE email = '$email'") or die('query failed');
         $select_user = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'") or die('query failed');
-        //mysqli_query($conn, "INSERT INTO `users` (`name`, `email`, `password`) VALUES ('$name','$email','$password')") or die('query failed');
-      //fyvghioinj
+       
 
         if(mysqli_num_rows($select_user) > 0){
             $row = mysqli_fetch_assoc($select_user);
@@ -39,7 +37,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="styleLogin.css">
         <link rel="stylesheet" href="https://cdn jsdeliver.net npm bootstrap-icons@1.10.2/font bootstrap-icons.css">
         <title>user registration page</title>
     </head>

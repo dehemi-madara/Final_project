@@ -81,8 +81,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
-    <link rel="stylesheet"type = "text/css"href = "styleadminp.css">
-    <link rel="stylesheet"type = "text/css"href = "styleeditp.css">
+    <link rel="stylesheet" type="text/css" href="styleHeader.css">
+    <link rel="stylesheet" type="text/css" href="styleOrders.css">
+    <link rel="stylesheet" type="text/css" href="styleDashboard.css">
+    <link rel="stylesheet" type="text/css" href="styleAdminPro.css">
+    <link rel="stylesheet" type="text/css" href="styleeditp.css">
     <title>Document</title>
 </head>
 <body>
@@ -136,7 +139,7 @@
             ?>
             <div class="box">
                 <img src="image/<?php echo $fetch_products['image']; ?>">
-                <p>price : $ <?php echo $fetch_products['price']; ?></p>
+                <p>price : Rs. <?php echo $fetch_products['price']; ?></p>
                 <h4><?php echo $fetch_products['name']; ?></h4>
                 <p class="detail"><?php echo $fetch_products['product_detail']; ?></p>
                 <a href="admin_product.php?edit=<?php echo $fetch_products['id'] ?>" class="edit">edit</a>

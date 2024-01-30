@@ -1,13 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white-alpha-40: rgba(255,255,255,0.40);
+    --white-alpha-25: rgba(255,255,255,0.25);
+    --backdrope-filter-blur: blur(5px);
+    --pink: #e84393;
+    --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
+}
 .dashboard{
-    background-image: url('image/th\ 2.jpg');
+    background-image: url('image/back\ la\ now.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
 .title{
     text-align: center;
     text-transform: uppercase;
-    margin: 2rem 0;
-    color: #545bba;
+    margin-top: 15px;
+    color: #4b148a;
 }
 
 .box-container{

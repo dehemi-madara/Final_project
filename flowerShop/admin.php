@@ -20,8 +20,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet"type = "text/css"href = "styleadmin.css">
+    <link rel="stylesheet" type="text/css" href="styleLogin.css">
+    <link rel="stylesheet" type="text/css" href="styleHeader.css">
+    <link rel="stylesheet" type="text/css" href="styleOrders.css">
+    <link rel="stylesheet" type="text/css" href="styleDashboard.css">
+    <link rel="stylesheet" type="text/css" href="styleAdminPro.css">
+    <link rel="stylesheet" type="text/css" href="styleeditp.css">
     <title>admin pannel</title>
 </head>
 <body>
@@ -37,7 +41,7 @@
                         $total_pendings += $fetch_pendings['total_price'];
                     }
                 ?>  
-                <h3>$ <?php echo $total_pendings; ?></h3>
+                <h3>Rs. <?php echo $total_pendings; ?></h3>
                 <p>total pendings</p>
             </div>
             <div class="box">
@@ -48,7 +52,7 @@
                         $total_completed += $fetch_completed['total_price'];
                     }
                 ?>  
-                <h3>$ <?php echo $total_completed; ?></h3>
+                <h3>Rs. <?php echo $total_completed; ?></h3>
                 <p>total completed</p>
             </div>
             <div class="box">
