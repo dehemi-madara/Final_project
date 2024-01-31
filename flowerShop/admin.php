@@ -1,7 +1,9 @@
 <?php
+    /* database connection */
     include 'connection.php';
     session_start();
 
+    /* navigation bar icon through login/logout connection */
     $admin_id = $_SESSION['admin_id'];
     if (!isset($admin_id)) {
         header('location:login.php');
@@ -29,10 +31,14 @@
     <title>admin pannel</title>
 </head>
 <body>
+    <!-- import header part -->
     <?php include 'admin_header.php'; ?>
+
+    <!-- dashboard part -->
     <section class="dashboard">
         <h1 class="title">dashboard</h1>
         <div class="box-container">
+            <!-- Total pending orders display part -->
             <div class="box">
                 <?php
                     $total_pendings = 0;
@@ -44,6 +50,7 @@
                 <h3>Rs. <?php echo $total_pendings; ?></h3>
                 <p>total pendings</p>
             </div>
+            <!-- Total completed orders display part -->
             <div class="box">
                 <?php
                     $total_completed = 0;
@@ -55,6 +62,7 @@
                 <h3>Rs. <?php echo $total_completed; ?></h3>
                 <p>total completed</p>
             </div>
+            <!-- Total orders(pending & completed) display part -->
             <div class="box">
                 <?php
                     $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
@@ -63,6 +71,7 @@
                 <h3><?php echo $num_of_orders; ?></h3>
                 <p>order placed</p>
             </div>
+            <!-- Total products(currently available) display part -->
             <div class="box">
                 <?php
                     $select_products = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
@@ -71,6 +80,7 @@
                 <h3><?php echo $num_of_products; ?></h3>
                 <p>products added</p>
             </div>
+            <!-- Total users(currently registered admins & users) display part -->
             <div class="box">
                 <?php
                     $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'user'") or die('query failed');
@@ -79,6 +89,7 @@
                 <h3><?php echo $num_of_users; ?></h3>
                 <p>registered users</p>
             </div>
+            <!-- Total admins display part -->
             <div class="box">
                 <?php
                     $select_admins = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'admin'") or die('query failed');
@@ -87,6 +98,7 @@
                 <h3><?php echo $num_of_admins; ?></h3>
                 <p>total admin</p>
             </div>
+            <!-- Total users display part -->
             <div class="box">
                 <?php
                     $select_totaluser = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
@@ -95,6 +107,7 @@
                 <h3><?php echo $num_of_totaluser; ?></h3>
                 <p>total users</p>
             </div>
+            <!-- Total messages display part -->
             <div class="box">
                 <?php
                     $select_messages = mysqli_query($conn, "SELECT * FROM `message`") or die('query failed');

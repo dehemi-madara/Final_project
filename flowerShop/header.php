@@ -9,9 +9,11 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- header part -->
     <header class="header">
         <div class="flex">
-            <a href="admin.php" class="logo">Admin <span>Pannel</span></a>
+            <!-- Logo -->
+            <a href="admin.php" class="logo">Flower <span>Shop</span></a>
             <nav class="navbar">
                 <a href="admin.php">Home</a>
                 <a href="admin_product.php">Products</a>

@@ -9,9 +9,12 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- header part -->
     <header class="header">
         <div class="flex">
+            <!-- Flower Girls logo -->
             <a href="admin.php" class="logo">Flower <span>Girls</span></a>
+            <!--  navigation bar -->
             <nav class="navbar">
                 <a href="admin.php">Home</a>
                 <a href="admin_product.php">Products</a>
@@ -19,9 +22,9 @@
                 <a href="admin_user.php">Users</a>
                 <a href="admin_message.php">Message</a>
             </nav>
+            <!--  navigation bar user icon (log out part) -->
             <div class="icons">
                 <i class="fa-regular fa-user" id="user-icon"></i>
-               
             </div>
             <div class="user-box">
                 <p>username : <span><?php echo $_SESSION['admin_name'];?></span></p>

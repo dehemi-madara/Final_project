@@ -1,7 +1,9 @@
 <?php
+    /* database connection */
     include 'connection.php';
     session_start();
 
+    /* navigation bar icon through login/logout connection */
     $admin_id = $_SESSION['admin_id'];
     if (!isset($admin_id)) {
         header('location:login.php');
@@ -20,12 +22,15 @@
         $image_tmp_name = $_FILES['image']['tmp_name'];
         $image_folder = 'image/'.$image;
 
+        /* check out, does the item to be inserted already exist? */
         $select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$product_name'") or die('query failed');
         if(mysqli_num_rows($select_product_name) > 0){
             $message[] = 'product name already exist';
         }else{
+            /* above condition false, insert item to database */
             $insert_product = mysqli_query($conn, "INSERT INTO `products`(`name`, `price`, `product_detail`, `image`)
                 VALUES('$product_name','$product_price','$product_detail','$image')") or die('query failed');
+            /* check the image size */
             if($insert_product){
                 if($image_size > 2000000) {
                     $message[] = 'product image size is too large';
@@ -44,9 +49,8 @@
         unlink('image/'.$fetch_delete_image['image']);
 
         mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'") or die('query failed');
-        mysqli_query($conn, "DELETE FROM `cart` WHERE pid = '$delete_id'") or die('query failed');
-        mysqli_query($conn, "DELETE FROM `wishlist` WHERE pid = '$delete_id'") or die('query failed');
 
+        /* after delete items stay in the product page */
         header('location:admin_product.php');
     }
     /*------------------------update products--------------------*/
@@ -89,7 +93,10 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- header part import -->
     <?php include 'admin_header.php'; ?>
+
+     <!-- boostrap close icon (click the icon, then remove the entire message container) -->
     <?php 
         if(isset($message)){
             foreach($message as $message) {
@@ -102,7 +109,10 @@
             }
         }
     ?>
+
+     <!-- product add container -->
     <section class="add-products">
+         <!-- set the text boxes and buttons in the form -->
         <form method="post" action="" enctype="multipart/form-data">
             <h1 class="title">Add new products</h1>
             <div class="input-field">
@@ -119,6 +129,7 @@
             </div>
             <div class="input-field">
                 <label>product image</label>
+                 <!-- all image types accept -->
                 <input type="file" name="image" accept="image/jpg, image/png, image/jpeg, image/webp" required>
             </div>
             <input type="submit" name="add_product" value="add product" class="btn">
@@ -129,19 +140,24 @@
     
     <section class="show-products">
         <div class="box-container">
+
+             <!-- get the product details from product table in the database -->
             <?php
                 $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
                 if(mysqli_num_rows($select_products) > 0){
                     while($fetch_products = mysqli_fetch_assoc($select_products)){
-
-                    
+ 
                 
             ?>
+            
+             <!-- set the above selected details to products boxes in product page -->
             <div class="box">
                 <img src="image/<?php echo $fetch_products['image']; ?>">
                 <p>price : Rs. <?php echo $fetch_products['price']; ?></p>
                 <h4><?php echo $fetch_products['name']; ?></h4>
                 <p class="detail"><?php echo $fetch_products['product_detail']; ?></p>
+                
+                <!-- delete and edit buttons -->
                 <a href="admin_product.php?edit=<?php echo $fetch_products['id'] ?>" class="edit">edit</a>
                 <a href="admin_product.php?delete=<?php echo $fetch_products['id'] ?>" class="delete" onclick = "
                     return conform('delete this product');">delete</a>
@@ -152,7 +168,11 @@
             ?>
         </div>
     </section>
+
+    <!-- open update container (after click the above update button) -->
     <section class="update-container">
+        
+        <!-- select all details of products table in database for update -->
         <?php 
             if (isset($_GET['edit'])){
                 $edit_id = $_GET['edit'];
@@ -162,6 +182,8 @@
 
                    
         ?>
+
+        <!-- set the above selected details to update boxes in update container -->
         <form method="post" action="" enctype="multipart/form-data">
             <img src="image/<?php echo $fetch_edit['image']; ?>" alt="">
             <input type="hidden" name="update_p_id" value="<?php echo $fetch_edit['id']; ?>">
@@ -169,10 +191,13 @@
             <input type="number" min="0" name="update_p_price" value="<?php echo $fetch_edit['price']; ?>">
             <textarea name="update_p_detail"><?php echo $fetch_edit['product_detail']; ?></textarea>
             <input type="file" name="update_p_image" accept="image/png,image/jpg,image/jpeg,image/webp">
+            <!-- update and close buttons -->
             <input type="submit" name="update_product" value="update" class="edit">
             <input type="reset" value="cancle" class="option-btn btn" id="close-edit">
             
         </form>
+
+        <!-- hidden update container & become product page  -->
         <?php
                     }
                 }
@@ -180,7 +205,9 @@
             } 
         ?>
     </section>
+    <!-- icons event-->
     <script type="text/javascript" src="script.js"></script>
+    <!-- close event-->
     <script type="text/javascript" src="scriptcloseedit.js"></script>
 </body>
 </html>

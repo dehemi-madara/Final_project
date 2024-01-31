@@ -1,7 +1,9 @@
 <?php
+    /* database connection */
     include 'connection.php';
     session_start();
 
+    /* navigation bar icon through login/logout connection */
     $admin_id = $_SESSION['admin_id'];
     if (!isset($admin_id)) {
         header('location:login.php');
@@ -11,12 +13,13 @@
         header('location:login.php');
     }
 
-     /*--------------------deleting orders details from database---------------------- */
+     /*--------------------deleting users details from database---------------------- */
      if(isset($_GET['delete'])) {
         $delete_id = $_GET['delete'];
 
         mysqli_query($conn, "DELETE FROM `users` WHERE id = '$delete_id'") or die('query failed');
 
+        /* after deleted item stay in this page */
         header('location:admin_user.php');
     }
 ?>
@@ -37,7 +40,11 @@
     <title>admin pannel</title>
 </head>
 <body>
+    <!-- import header part -->
     <?php include 'admin_header.php'; ?>
+
+    
+    <!-- boostrap close icon (click the icon, then remove the entire message container) -->
     <?php 
         if(isset($message)){
             foreach($message as $message) {
@@ -50,9 +57,13 @@
             }
         }
     ?>
+    
+    <!-- user container -->
     <section class="user-container">
         <h1 class="title">total registered users</h1>
         <div class="box-container">
+
+        <!-- get the users details from user table in the database -->
         <?php
                 $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
                 if(mysqli_num_rows($select_users) > 0){
@@ -60,6 +71,8 @@
                   
 
             ?>
+
+            <!-- set the above selected details to users boxes in user page -->
             <div class="box">
                 <p>user id: <span><?php echo $fetch_users['id']; ?></span></p>
                 <p>user name: <span><?php echo $fetch_users['name']; ?></span></p>
