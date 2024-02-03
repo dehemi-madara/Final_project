@@ -4,14 +4,15 @@
     session_start();
 
     /* navigation bar icon through login/logout connection */
-    $admin_id = $_SESSION['admin_id'];
-    if (!isset($admin_id)) {
-        header('location:login.php');
-    }
-    if (isset($_POST['logout'])){
-        session_destroy();
-        header('location:login.php');
-    }
+    // $admin_id = $_SESSION['admin_id'];
+    // if (!isset($admin_id)) {
+    //     header('location:login.php');
+    // }
+    // if (isset($_POST['logout'])){
+    //     session_destroy();
+    //     header('location:login.php');
+    // }
+
     /* ------------adding products to database------------- */
     if (isset($_POST['add_product'])){
         $product_name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -153,6 +154,7 @@
              <!-- set the above selected details to products boxes in product page -->
             <div class="box">
                 <img src="image/<?php echo $fetch_products['image']; ?>">
+                
                 <p>price : Rs. <?php echo $fetch_products['price']; ?></p>
                 <h4><?php echo $fetch_products['name']; ?></h4>
                 <p class="detail"><?php echo $fetch_products['product_detail']; ?></p>

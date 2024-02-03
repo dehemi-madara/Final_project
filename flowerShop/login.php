@@ -6,6 +6,8 @@
     /* login form submition */
     if(isset($_POST['submit-btn'])) {
 
+        
+
         /* provide security for email and password  */
         $filter_email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
         $email = mysqli_real_escape_string($conn, $filter_email);
@@ -14,25 +16,31 @@
         $password= mysqli_real_escape_string($conn, $filter_password);
 
         /* get the users details from user table in the database */
-        $select_user = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'") or die('query failed');
+        $select_user = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'");
        
 
         /* check the email & password correct */
         if(mysqli_num_rows($select_user) > 0){
             $row = mysqli_fetch_assoc($select_user);
+
             if($row['user_type'] == 'admin'){
-                $_SESSION['admin_name'] = $row['name'];
-                $_SESSION['admin_email'] = $row['email'];
-                $_SESSION['admin_id'] = $row['id'];
-                /* if user type = admin and email,password correct, then open admin panel */
-                header('location:admin.php');
+                
+                //check admin Password and email inside the Database
+                if($row['email']==$email && $row['password']==$password){
+                    header('location:admin.php');
+                }else{
+                    echo '<script>alert("Login Fail! Check Your Password, ' . $row['name'] . '");</script>';
+                }
+
 
             }else if($row['user_type'] == 'user'){
-                $_SESSION['user_name'] = $row['name'];
-                $_SESSION['user_email'] = $row['email'];
-                $_SESSION['user_id'] = $row['id'];
-                /* if user type = user and email,password correct, then open client panel */
-                header('location:index.php');
+                //check user Password and email inside the Database
+                if($row['email']==$email && $row['password']==$password){
+                    header('location:index.php');
+                }else{
+                    echo '<script>alert("Login Fail! Check Your Password, ' . $row['name'] . '");</script>';
+                }
+                
             }else{
                 /* else give error message */
                 $message[] = 'incorrect email or password';

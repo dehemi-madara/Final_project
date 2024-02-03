@@ -43,6 +43,9 @@ header{
     color: #8b2cd8;
     text-transform: uppercase;
 }
+svg{
+    margin-left: 2rem;
+}
 .navbar a:hover,
 .header .icons i:hover{
     color: #c7b3f5;

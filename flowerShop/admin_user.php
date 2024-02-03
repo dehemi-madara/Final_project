@@ -3,18 +3,18 @@
     include 'connection.php';
     session_start();
 
-    /* navigation bar icon through login/logout connection */
-    $admin_id = $_SESSION['admin_id'];
-    if (!isset($admin_id)) {
-        header('location:login.php');
-    }
-    if (isset($_POST['logout'])){
-        session_destroy();
-        header('location:login.php');
-    }
+    // /* navigation bar icon through login/logout connection */
+    // $admin_id = $_SESSION['admin_id'];
+    // if (!isset($admin_id)) {
+    //     header('location:login.php');
+    // }
+    // if (isset($_POST['logout'])){
+    //     session_destroy();
+    //     header('location:login.php');
+    // }
 
      /*--------------------deleting users details from database---------------------- */
-     if(isset($_GET['delete'])) {
+    if(isset($_GET['delete'])) {
         $delete_id = $_GET['delete'];
 
         mysqli_query($conn, "DELETE FROM `users` WHERE id = '$delete_id'") or die('query failed');
