@@ -18,6 +18,7 @@
         /* get the users details from user table in the database */
         $select_user = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'");
        
+        /* bbbb */
 
         /* check the email & password correct */
         if(mysqli_num_rows($select_user) > 0){
@@ -66,7 +67,7 @@
                 <input type="email" name="email" placeholder="enter your email" required>
                 <input type="password" name="password" placeholder="enter your password" required>
                 <!-- login button -->
-                <input type="submit" name="submit-btn" class="btn" value="regisyer now">
+                <input type="submit" name="submit-btn" class="btn" value="login now">
 
                 <!-- link the register page -->
                 <p>Do not have an account ?<a href="register.php">register now</a></p>
