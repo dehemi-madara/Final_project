@@ -56,24 +56,59 @@
     }
     /*------------------------update products--------------------*/
     if(isset($_POST['update_product'])) {
-        $update_p_id = $_POST['$update_p_id'];
-        $update_p_name = $_POST['$update_p_name'];
-        $update_p_price = $_POST['$update_p_price'];
-        $update_p_detail = $_POST['$update_p_detail'];
-        $update_p_img=$_FILES['$update_p_image']['name'];
-        $update_p_image_tmp_name=$_FILES['$update_p_image']['tmp_name'];
-        $update_p_image_folder = 'image/'.$update_p_img;
+        $update_id = $_POST['update_p_id'];
+        $update_name = $_POST['update_p_name'];
+        $update_price = $_POST['update_p_price'];
+        $update_detail = $_POST['update_p_detail'];
+        $update_img = $_FILES['update_p_image']['name'];
+        $update_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
+        $update_image_folder = 'image/' . $update_img;
 
-        $update_query = mysqli_query($conn, "UPDATE `products` SET id='$update_p_id', name='$update_p_name', price='$update_p_price',
-        product_detail = '$update_p_detail',image='$update_p_img' WHERE id='$update_p_id'") or die('query failed');
 
-        if($update_query) {
-            move_uploaded_file($update_p_image_tmp_name,$update_p_image_folder);
-            $message[]='product update successfully';
-            header('location:admin_product.php');
-        }else{
-            $message[]='product could not updated successfully';
+        // $update_query = mysqli_query($conn, "UPDATE products SET  name=$update_name, price=$update_price,
+        // product_detail = $update_detail,image=$update_img WHERE id=$update_id") or die('query failed');
+
+        // if($update_query) {
+        //     move_uploaded_file($update_p_image_tmp_name,$update_p_image_folder);
+        //     $message[]='product update successfully';
+        //     header('location:admin_product.php');
+        // }else{
+        //     $message[]='product could not updated successfully';
+        // }
+
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
         }
+    
+        // Update query using parameterized statement
+        $update_query = mysqli_prepare($conn, "UPDATE products SET name=?, price=?, product_detail=?, image=? WHERE id=?");
+    
+        // Check if the prepare statement was successful
+        if ($update_query) {
+            // Bind the parameters
+            mysqli_stmt_bind_param($update_query, "ssssi", $update_name, $update_price, $update_detail, $update_img, $update_id);
+    
+            // Execute the query
+            $result = mysqli_stmt_execute($update_query);
+    
+            if ($result) {
+                // Move uploaded file
+                move_uploaded_file($update_image_tmp_name, $update_image_folder);
+    
+                echo '<script>alert("Product Update Successfully")</script>';
+                header('location: admin_product.php');
+            } else {
+                echo "Product could not be updated successfully: " . mysqli_error($conn);
+            }
+    
+            // Close the prepared statement
+            mysqli_stmt_close($update_query);
+        } else {
+            echo "Prepare statement failed: " . mysqli_error($conn);
+        }
+    
+        // Close the database connection
+        mysqli_close($conn);
     }
 
 ?>
@@ -180,9 +215,7 @@
                 $edit_id = $_GET['edit'];
                 $edit_query = mysqli_query($conn, "SELECT * FROM `products` WHERE id = $edit_id") or die('query failed');
                 if(mysqli_num_rows($edit_query) > 0){
-                    while($fetch_edit = mysqli_fetch_assoc($edit_query)){
-
-                   
+                    while($fetch_edit = mysqli_fetch_assoc($edit_query)){          
         ?>
 
         <!-- set the above selected details to update boxes in update container -->
