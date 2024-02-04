@@ -7,14 +7,11 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /* provide security for email and password  */
-        $filter_email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
-        $email = mysqli_real_escape_string($conn, $filter_email);
-
-        $filter_password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
-        $password= mysqli_real_escape_string($conn, $filter_password);
+        $email = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_SANITIZE_STRING) : '';
+        $password = isset($_POST['password']) ? filter_var($_POST['password'], FILTER_SANITIZE_STRING) : '';
 
         /* get the users details from user table in the database */
-        $select_user = mysqli_query($conn, "SELECT * FROM `users`");
+        $select_user = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'");
 
         /* check the email & password correct */
         if(mysqli_num_rows($select_user) > 0){
@@ -27,7 +24,7 @@
                     if ($row['user_type'] == 'admin') {
                         
                         header('location:admin.php');
-                    }else{
+                    }else if($row['user_type'] == 'user'){
                         header('location:index.php');
                     }
                 }else{
@@ -36,42 +33,7 @@
             }else{
                 echo '<script>alert("Login Fail! Check Your Email")</script>';
             }
-            // if($row['user_type'] == 'admin'){
-                
-            //     //check admin email inside the Database
-            //     if($row['email']==$email){
-
-            //         //check admin password if email is correct
-            //         if($row['password']==$password){
-            //             header('location:admin.php');
-            //         }
-            //         else{
-            //             echo '<script>alert("Login Fail! Check Your Password, ' . $row['name'] . '");</script>';
-            //         }
-                    
-            //     }else{
-            //         echo '<script>alert("Login Fail! Check Your Email");</script>';
-            //     }
-
-
-            // }else if($row['user_type'] == 'user'){
-            //     //check user Password and email inside the Database
-            //     if($row['email']==$email ){
-            //         if( $row['password']==$password){
-            //             header('location:index.php');
-            //         }
-            //         else{
-            //             echo '<script>alert("Login Fail! Check Your Password, ' . $row['name'] . '");</script>';
-            //         }
-                    
-            //     }else{
-            //         echo '<script>alert("Login Fail! Check Your Email");</script>';
-            //     }
-                
-            // }else{
-            //     /* else give error message */
-            //     $message[] = 'incorrect email or password';
-            // }
+            
         }
     }
 ?>
@@ -91,7 +53,8 @@
             <form action="login.php" method="post">
                 <h3>login now</h3>
                 <input type="email" name="email" placeholder="enter your email" required>
-                <input type="password" name="password" placeholder="enter your password" required>
+<input type="password" name="password" placeholder="enter your password" required>
+
                 <!-- login button -->
                 <input type="submit" name="submit-btn" class="btn" value="login now">
 
