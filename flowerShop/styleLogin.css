@@ -11,6 +11,11 @@
     --pink: #e84393;
     --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
 }
+.empty{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 16px;
+}
 .message{
     text-align: center;
     margin: 2rem auto;

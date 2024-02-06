@@ -72,7 +72,7 @@
             ?>
             <!-- set the above selected details to message boxes in message page -->
             <div class="box">
-                <p>user id: <span><?php echo $fetch_message['id'] ;?></span></p>
+                <p>user id: <span><?php echo $fetch_message['user_id'] ;?></span></p>
                 <p>user name : <span><?php echo $fetch_message['name']; ?></span></p>
                 <p>email: <span><?php echo $fetch_message['email']; ?></span></p>
                 <p><?php echo $fetch_message['message']; ?></p>
@@ -89,6 +89,7 @@
 
             ?>
         </div>
+        
     </section>
     <!-- import javascript part for icons -->
     <script type="text/javascript" src="script.js"></script>

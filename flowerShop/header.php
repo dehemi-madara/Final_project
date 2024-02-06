@@ -15,19 +15,19 @@
             <!-- Logo -->
             <a href="admin.php" class="logo">Flower <span>Shop</span></a>
             <nav class="navbar">
-                <a href="admin.php">Home</a>
-                <a href="admin_product.php">Products</a>
-                <a href="admin_orders.php">Orders</a>
-                <a href="admin_user.php">Users</a>
-                <a href="admin_message.php">Message</a>
+                <a href="index.php">Home</a>
+                <a href="shop.php">Shop</a>
+                <a href="orders.php">Orders</a>
+                <a href="about.php">About Us</a>
+                <a href="contact.php">Contact</a>
             </nav>
             <div class="icons">
                 <i class="fa-regular fa-user" id="user-icon"></i>
                
             </div>
             <div class="user-box">
-                <p>username : <span><?php echo $_SESSION['admin_name'];?></span></p>
-                <p>email : <span><?php echo $_SESSION['admin_email'];?></span></p>
+                <p>username : <span><?php echo $_SESSION['user_name'];?></span></p>
+                <p>email : <span><?php echo $_SESSION['user_email'];?></span></p>
                 <form method="post" class="logout">
                     <button name="logout" class="logout-btn">LOG OUT</button>
                 </form>
