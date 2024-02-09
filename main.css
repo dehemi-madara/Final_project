@@ -282,6 +282,11 @@ form .btn:hover{
     border-radius: unset;
     margin: 0;
 }
+.footer .inner-footer .card p{
+    color: gray;
+    margin-bottom: 1rem;
+    font-size: 16px;
+}
 .footer .inner-footer .card .input-field i{
     color: #fff;
     background: var(--pink);
@@ -301,9 +306,77 @@ form .btn:hover{
     line-height: 50px;
     text-align: center;
     border: 1px solid var(--pink);
-    color: var(--pink)
-    
-    
+    color: var(--pink);
+    cursor: pointer;
+    padding: .6rem;
+    margin: .3rem 0;
+    border-radius: 50%;
+}
+.footer .inner-footer .social-links i:hover{
+    background: var(--pink);
+    color: #fff;
+}
+.bottom-footer{
+    text-transform: capitalize;
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--pink);
+    border: 1px solid gainsboro;
+}
+/* ------------------- home screen --------------------- */
+.slider-show-container{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.wrapper-one,
+.wrapper-two,
+.wrapper-three{
+    background-color: #eee;
+    background-size: cover;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    color: #fff;
+    text-transform: capitalize;
+}
+.wrapper-one{
+    background-image: url('img/bg2.jpg');
+}
+.wrapper-two{
+    background-image: url('img/bg2.jpg');
+    animation: slideTwoAnim 20s infinite;
+}
+.wrapper-three{
+    background-image: url('img/bg2.jpg');
+    animation: slideThreeAnim 20s infinite;
+}
+.wrapper-text{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes slideTwoAnim{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    67%{
+        opacity: 1;
+    }
+    83%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
 /* ------------------- media screen --------------------- */
 @media (max-width: 991px){

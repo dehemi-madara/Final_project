@@ -21,5 +21,20 @@
 </head>
 <body>
     <?php include 'header.php'; ?>
+    <div class="slider-section">
+        <div class="slider-show-container">
+            <div class="wrapper-one">
+                <div class="wrapper-text">inspired by nature</div>
+            </div>
+            <div class="wrapper-two">
+                <div class="wrapper-text">fresh flower for you</div>
+            </div>
+            <div class="wrapper-three">
+                <div class="wrapper-text">inspired by nature</div>
+            </div>
+        </div>
+    </div>
+    <?php include 'footer.php'; ?>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
