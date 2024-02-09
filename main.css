@@ -303,6 +303,7 @@ form .btn:hover{
     border: 1px solid var(--pink);
     color: var(--pink)
     
+    
 }
 /* ------------------- media screen --------------------- */
 @media (max-width: 991px){

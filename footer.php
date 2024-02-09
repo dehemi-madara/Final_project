@@ -41,7 +41,7 @@
                 <li>Kurunegala</li>
                 <li>Kandy</li>
                 <li>Colombo</li>
-                <li>Gampha</li>
+                <li>Gampaha</li>
                 <li>Matara</li>
                 <li>Galle</li>
             </ul>
