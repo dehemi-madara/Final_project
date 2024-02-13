@@ -29,10 +29,10 @@ header{
 .logo{
     font-size: 2rem;
     font-weight: bold;
-    color: #fc409e;
+    color: #A74AC7;
 }
 .logo span{
-    color: #fc409e;
+    color: #A74AC7;
 }
 .navbar {
     margin: 5px 20px 5px 200px;
@@ -40,7 +40,7 @@ header{
 .navbar a{
     margin: 1rem;
     font-size: 1rem;
-    color: #8b2cd8;
+    color: #7D0552;
     text-transform: uppercase;
 }
 svg{

@@ -174,19 +174,7 @@ form .btn:hover{
 }
 
 /*-------------Dashboard---------*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-:root{
-    --white-alpha-40: rgba(255,255,255,0.40);
-    --white-alpha-25: rgba(255,255,255,0.25);
-    --backdrope-filter-blur: blur(5px);
-    --pink: #e84393;
-    --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
-}
 .dashboard{
     background-image: url('image/back\ la\ now.jpg');
     background-size: cover;
@@ -269,13 +257,7 @@ body{
     margin: 0;
 }
 
-:root{
-    --white-alpha-40: rgba(255,255,255,0.40);
-    --white-alpha-25: rgba(255,255,255,0.25);
-    --backdrope-filter-blur: blur(5px);
-    --pink: #e84393;
-    --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
-}
+
 header{
     background: #faefef;
     width: 100%;
@@ -521,6 +503,27 @@ svg{
     0%{
         opacity: 0;
     }
+    17%{
+        opacity: 0;
+    }
+    33%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    67%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes slideThreeAnim{
+    0%{
+        opacity: 0;
+    }
     50%{
         opacity: 0;
     }
@@ -528,7 +531,7 @@ svg{
         opacity: 1;
     }
     83%{
-        opacity: 1;
+        opacity: 0;
     }
     100%{
         opacity: 0;
@@ -570,10 +573,136 @@ svg{
     background: url(image/d1.jpg);
 }
 .row .card:nth-child(2){
-    background: url(image/d1.jpg);
+    background: url(image/d2.jpg);
 }
 .row .card:nth-child(3){
-    background: url(image/d1.jpg);
+    background: url(image/d3.jpg);
+}
+.categories{
+    padding-bottom: 3%;
+}
+.categories .box-container{
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.categories .box-container .box{
+    font-size: 1.5rem;
+    color: gray;
+    background-color: transparent;
+    box-shadow: none;
+    cursor: pointer;
+}
+.categories .box-container .box:hover{
+    color: var(--pink);
+}
+.categories .box-container .box img{
+    width: 200px;
+    height: 200px;
+    padding: 2px;
+    margin: 1rem 0;
+    border-radius: 50%;
+    border: 2px solid #ececec;
+}
+.categories .box-container .box span{
+    text-transform: uppercase;
+    font-size: 16px;
+}
+/*---------banner3-----*/
+
+.banner3{
+    background-image: url(image/d2.jpg) ;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    max-width: 1400px;
+    margin: 3rem auto;
+    padding-left: 5%;
+    height: 300px;
+    color: #fff;
+}
+.banner3 .detail{
+    padding: 4% 7%;
+}
+.banner3 .detail h1{
+    font-size: 2.5rem;
+    margin: .5rem 0;
+}
+.banner3 .detail p{
+    margin-bottom: 1.5rem;
+}
+.banner3 .detail a{
+    text-transform: uppercase;
+    color: #fff;
+    padding: .5rem 2rem;
+    border: 1px solid #fff;
+}
+.shop .box{
+    position: relative;
+}
+.price{
+    font-size: 18px;
+}
+.name{
+    font-size: 20px;
+    color: var(--pink);
+    margin: .5rem;
+    text-transform: capitalize;
+}
+.shop .icons{
+    position: absolute;
+    right: 3%;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    background: var(--white-alpha-40);
+    visibility: hidden;
+
+}
+.shop .box:hover .icons{
+    visibility: visible;
+}
+.shop .icons a,
+.shop .icons button{
+    margin: .2rem 0;
+    padding: .3rem;
+    border: 1px solid #ececec;
+    color: gray;
+}
+.shop img{
+    width: 100%;
+}
+.shop .more{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    margin: .5rem auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: gray;
+}
+.shop .more a{
+    margin-bottom: -.6rem;
+    color: gray;
+    text-transform: capitalize;
+}
+.shop .more a:hover{
+    color: var(--pink)
+}
+.shop .more:hover{
+    border: 1px solid var(--pink);
+    color: var(--pink);
+}
+
+.view_page {
+    padding: 5% 8%;
+}
+
+.view_page from {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* ------------------- media screen --------------------- */
 @media (max-width: 991px){
@@ -654,19 +783,7 @@ update-container .box-container .box p:nth-child(4){
 }
 
 /*---------style user------*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-:root{
-    --white-alpha-40: rgba(255,255,255,0.40);
-    --white-alpha-25: rgba(255,255,255,0.25);
-    --backdrope-filter-blur: blur(5px);
-    --pink: #e84393;
-    --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
-}
 .empty {
     text-align: center;
     text-transform: capitalize;

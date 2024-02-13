@@ -59,6 +59,90 @@
             </div>
         </div>
     </div>
+    <div class="categories">
+        <h1 class = "title">TOP CATEGORIES</h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="image/f.jpg">
+                <span>birthday</span>
+            </div>
+            <div class="box">
+                <img src="image/f.jpg">
+                <span>sympathy</span>
+            </div>
+            <div class="box">
+                <img src="image/f.jpg">
+                <span>next day</span>
+            </div>
+            <div class="box">
+                <img src="image/f.jpg">
+                <span>plant</span>
+            </div>
+            <div class="box">
+                <img src="image/f.jpg">
+                <span>wedding</span>
+            </div>
+        </div>
+    </div>
+    <div class="banner3">
+        <div class="detail">
+            <span>BETTER THAN CAKE</span>
+            <h1>BIRTHDAY BOUQES</h1>
+            <p>hiiiiii.......</p>
+            <a href="shop.php">explore<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+    <div class="shop">
+       <h1 class="title">shop besh sellers</h1> 
+       <?php
+       if(isset($message)) {
+        foreach ($message as $message) {
+            echo '
+            <div class="message"
+            <span>' .$message.'</span>
+            <i class="fa-solid fa-circle" onclick="this.parentElement.remove()"></i>
+            </div>';
+        }
+       }
+       ?>
+       <div class="box-container">
+        <?php
+        $select_products = mysqli_query($conn,"SELECT * FROM 'products'") or die('query failed');
+        if(mysqli_num_rows($select_products)>0){
+            while($fetch_products=mysqli_fetch_assoc($select_products)){
+
+          
+        ?>
+        <form action="" method="post" class="box">
+            <img src="image/<?php echo $fetch_products['image']; ?>">
+            <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+            <div class="name">$<?php echo $fetch_products['name']; ?></div>
+            <input type="hidden" name="product_id" value="<?php echo $fetch_products['image']; ?>">
+            <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
+            <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
+            <input type="hidden" name="product_image" value="<?php echo $fetch_products['price']; ?>">
+            <div class="icon">
+                <a href="view_page.php?pid=<?php echo $fetch_products['image']; ?>" class="fa-solid fa-eye"></a>
+                <button type ="submit" name="add_to_wishlist" class="fa-solid fa-heart"></button>
+                <button type ="submit" name="add_to_cart" class="fa-solid fa-cart-shopping"></button>
+            </div>
+       </form>
+        <?php 
+                }
+            }else{
+                echo '<p class="empty">no products added yet !</p>';
+            }
+        
+        ?>
+        
+
+       </div>
+       <div class="more">
+        <a href="shop.php">load more</a>
+        <i class="fa-solid fa-arrow-down"></i>
+       </div>
+    </div>
+
     <?php include 'footer.php'; ?>
     <script type="text/javascript" src="script.js"></script>
 </body>
