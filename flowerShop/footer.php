@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/95da0b33ad.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <section class="home-contact">
@@ -54,15 +55,15 @@
                 <i class="bi bi-envelope"></i>
          </div> 
         <div class="social-links">
-           <i class="bi bi-instagram"></i>
-           <i class="bi bi-youtube"></i>
-           <i class="bi bi-twitter"></i>
-           <i class="bi bi-whatsapp"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+        <i class="fa-brands fa-twitter"></i>
             </div>
         </div>
     </div>
     <div  class="bottom-footer">
-        <p>all right reserved - code with selena</p>
+        <p>all right reserved </p>
 
     </div>
 </footer>

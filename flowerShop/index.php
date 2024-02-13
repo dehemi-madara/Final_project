@@ -34,6 +34,31 @@
             </div>
         </div>
     </div>
+    <div>
+        <div class="row">
+            <div class="card">
+                <div class="details">
+                    <span>30% OFF TODAY</span>
+                    <h1>simple & elegant</h1>
+                    <a href="shop.php">shop now</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="details">
+                    <span>30% OFF TODAY</span>
+                    <h1>simple & elegant</h1>
+                    <a href="shop.php">shop now</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="details">
+                    <span>30% OFF TODAY</span>
+                    <h1>simple & elegant</h1>
+                    <a href="shop.php">shop now</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php include 'footer.php'; ?>
     <script type="text/javascript" src="script.js"></script>
 </body>

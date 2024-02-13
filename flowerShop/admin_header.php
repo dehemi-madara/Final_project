@@ -17,6 +17,7 @@ header("Location: login.php");}
     <link rel="stylesheet" type="text/css" href="styleLogin.css">
     <link rel="stylesheet" type="text/css" href="styleHeader.css">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/95da0b33ad.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- header part -->
@@ -33,7 +34,7 @@ header("Location: login.php");}
                 <a href="admin_message.php">Message</a>
             
                 <form method="post" action="login.php">
-                    <button type="submit" name="logout" class="btn btn-danger">Logout</button>
+                    <button type="submit" name="logout" class="btn btn-danger"><i class="fa-solid fa-user"></i></button>
                 </form>
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" name="logout" padding-left="60px" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
