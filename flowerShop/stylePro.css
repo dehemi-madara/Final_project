@@ -1,6 +1,6 @@
 /* ----------------------add product----------------------- */
 .add-products{
-    background-image: url('image/light\ bg.jpg');
+    background-image: url('image/f.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -20,7 +20,7 @@
     height: 200px;
 }
 .show-products{
-    background-image: url('image/back\ la\ now.jpg');
+    background-image: url('image/f2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
