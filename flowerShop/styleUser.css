@@ -11,10 +11,20 @@
     --pink: #e84393;
     --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
 }
+.user-container{
+    background-image: url('image/f2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .empty {
     text-align: center;
     text-transform: capitalize;
     font-size: 16px;
+}
+.message-container{
+    background-image: url('image/f2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .user-container title,
 .message-container title {

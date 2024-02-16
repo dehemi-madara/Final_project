@@ -1,5 +1,9 @@
+
 .order-container{
     padding: 3% 7%;
+    background-image: url('image/f2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .order-container .box-container{
     grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));

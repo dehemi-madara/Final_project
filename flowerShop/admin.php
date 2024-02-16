@@ -24,9 +24,9 @@
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styleLogin.css">
     <link rel="stylesheet" type="text/css" href="styleHeader.css">
-    <link rel="stylesheet" type="text/css" href="styleOrders.css">
+    <link rel="stylesheet" type="text/css" href="order.css">
     <link rel="stylesheet" type="text/css" href="styleDashboard.css">
-    <link rel="stylesheet" type="text/css" href="styleAdminPro.css">
+    <link rel="stylesheet" type="text/css" href="stylePro.css">
     <link rel="stylesheet" type="text/css" href="styleeditp.css">
     <title>admin pannel</title>
 </head>

@@ -122,7 +122,7 @@
     rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styleHeader.css">
-    <link rel="stylesheet" type="text/css" href="styleOrders.css">
+    <link rel="stylesheet" type="text/css" href="order.css">
     <link rel="stylesheet" type="text/css" href="styleDashboard.css">
     <link rel="stylesheet" type="text/css" href="stylePro.css">
     <link rel="stylesheet" type="text/css" href="styleeditp.css">

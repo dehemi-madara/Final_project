@@ -34,7 +34,7 @@
 }
 
 .categories .box-container{
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 .categories .box-container .box{
     font-size: 1.5rem;
@@ -61,7 +61,7 @@
 
 /* banner3 -------------------------------------------------------------- */
 .banner3{
-    background-image: url('image/black\ background.jpg');
+    background-image: url('image/dark\ bg3.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
