@@ -65,11 +65,9 @@ if(mysqli_num_rows($cart_number)>0){
 
     <?php include 'header.php'; ?>
     <div class="banner">
-        <h1>our shop</h1>
+        <h1>product detail</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-
-    <div class="shop">
-    <h1 class="title">shop best sellers</h1> 
+    </div>
     <?php
     if(isset($message)) {
         foreach ($message as $message) {
@@ -81,7 +79,7 @@ if(mysqli_num_rows($cart_number)>0){
         }
     }
     ?>
-    <div class="box-container">
+    <div class="view_page">
         <?php
         if (isset($_GET['pid'])){
             $pid = $_GET['pid'];
@@ -111,7 +109,7 @@ if(mysqli_num_rows($cart_number)>0){
             </div>
         </form>
         <?php 
-                 }
+                   }
                 }
             }
         
@@ -119,11 +117,9 @@ if(mysqli_num_rows($cart_number)>0){
         ?>
     </div>
     
-</div>
-
-<?php include 'footerr.php'; ?>
-    <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="scriptcloseedit.js"></script>
-    
-</body>
-</html>
+    <?php include 'footerr.php'; ?>
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="scriptcloseedit.js"></script>
+        
+    </body>
+    </html>

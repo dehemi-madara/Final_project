@@ -150,7 +150,7 @@
 .banner{
     width: 100%;
     height:500px ;
-    background-image: url('image/dark\ bg3.jpg');
+    background-image: url('image/banner2.jpg');
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,4 +164,42 @@
 }
 .banner p{
     font-size: 18px;
+}
+.view_page{
+    padding: 5% 8%;
+}
+.view_page form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.view_page form img{
+    width: 50%;
+}
+.view_page form .name{
+    font-size: 4rem;
+    color: var(--pink);
+}
+.view_page form .detail,
+.view_page form .price{
+    font-size: 18px;
+    color: #550A35;
+    line-height: 2;
+}
+.view_page form .price{
+    font-size: 24px;
+}
+
+.view_page form .quantity{
+    width: 60;
+    box-shadow: none;
+    border: 1px solid var(--pink);
+    border-radius: 0;
+    margin-top: 1rem;
+}
+.view_page button{
+    background: var(--pink);
+    color: #fff;
+    margin-top: 1rem;
+    padding: .8rem 1rem;
 }
