@@ -56,8 +56,8 @@ if(mysqli_num_rows($cart_number)>0){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="mainc.css">
-    <link rel="stylesheet" type="text/css" href="Mcategory.css">
+    <link rel="stylesheet" type="text/css" href="mani.css">
+    <link rel="stylesheet" type="text/css" href="category.css">
     
     <title>flower shop</title>
 </head>
@@ -67,6 +67,7 @@ if(mysqli_num_rows($cart_number)>0){
     <div class="banner">
         <h1>our shop</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+    </div>
 
     <div class="shop">
     <h1 class="title">shop best sellers</h1> 

@@ -57,7 +57,7 @@ if(mysqli_num_rows($cart_number)>0){
     rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="mani.css">
-    <link rel="stylesheet" type="text/css" href="ca.css">
+    <link rel="stylesheet" type="text/css" href="category.css">
     
     <title>flower shop</title>
 </head>
