@@ -222,6 +222,11 @@
 .wishlist_total p{
     font-size: 1.5rem;
 }
+.wishlist_total a{
+    text-transform: capitalize;
+    font-size: 16px;
+    margin-right: 2rem;
+}
 
 .qty{
     display: flex;
