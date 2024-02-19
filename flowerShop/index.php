@@ -2,10 +2,10 @@
     include 'connection.php';
     session_start();
 
-     $user_id = $_SESSION['user_id'];
-     //if (!isset($user_id)) {
-          //header('location:login.php');
-   // }
+    $user_id = $_SESSION['user_id'];
+    if (!isset($user_id)) {
+          header('location:login.php');
+    }
     
     /*----------------adding products to wishlist----------*/
     if(isset($_POST['add_to_wishlist'])){

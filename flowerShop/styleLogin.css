@@ -65,13 +65,18 @@ textarea{
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 40);
     font-size: 14px;
 }
-form .btn{
+
+#btnlogin{
     cursor: pointer;
     background:  #550A35;
+    width: 100%;
+    
+    align-items: center;
     color: #fff;
     text-transform: uppercase;
 }
-form .btn:hover{
+
+#btnlogin:hover{
     background: transparent;
     border: 2px solid var(--pink);
     color: var(--pink);

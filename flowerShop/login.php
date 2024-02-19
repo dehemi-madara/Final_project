@@ -1,41 +1,33 @@
 <?php 
     /* database connection */
     include 'connection.php';
-    //session_start();
+    session_start();
 
-    /* login form submition */
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        /* provide security for email and password  */
-        $email = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_SANITIZE_STRING) : '';
-        $password = isset($_POST['password']) ? filter_var($_POST['password'], FILTER_SANITIZE_STRING) : '';
-
-        /* get the users details from user table in the database */
-        $select_user = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'");
-
-        /* check the email & password correct */
-        if(mysqli_num_rows($select_user) > 0){
-            $row = mysqli_fetch_assoc($select_user);
-
-            if ($row['email'] == $email) {
-                
-                if ($row['password'] == $password) {
-
-                    if ($row['user_type'] == 'admin') {
-                        
-                        header('location:admin.php');
-                    }else if($row['user_type'] == 'user'){
-                        header('location:index.php');
-                    }
-                }else{
-                    echo '<script>alert("Login Fail! Check Your Password, ' . $row['name'] . '");</script>';
-                }
-            }else{
-                echo '<script>alert("Login Fail! Check Your Email")</script>';
-            }
+    if (isset($_POST['login'])) {
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
+    
+        $query = "SELECT * FROM `users` WHERE email = '$email' AND password = '$password'";
+        // print_r($query);
+        //     die();
+        $result = mysqli_query($conn, $query) or die('Query failed');
+    
+        if (mysqli_num_rows($result) > 0) {
+            $user_data = mysqli_fetch_assoc($result);
             
+            $_SESSION['user_id'] = $user_data['id'];
+    
+            if ($user_data['user_type'] == 'admin') {
+                header('location: admin.php');
+            } else {
+                header('location: index.php');
+            }
+        } else {
+            $error_message = 'Invalid email or password';
         }
     }
+
+   
 ?>
 
 <!DOCTYPE HTML>
@@ -45,18 +37,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="styleLogin.css">
         <link rel="stylesheet" href="https://cdn jsdeliver.net npm bootstrap-icons@1.10.2/font bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <title>user login page</title>
     </head>
     <body>
         <!-- login container -->
         <section class="form-container">
-            <form action="login.php" method="post">
+            <form action="" method="post">
                 <h3>login now</h3>
                 <input type="email" name="email" placeholder="enter your email" required>
-<input type="password" name="password" placeholder="enter your password" required>
+                <input type="password" name="password" placeholder="enter your password" required>
 
                 <!-- login button -->
-                <input type="submit" name="submit-btn" class="btn" value="login now">
+                <button type="submit" class="btn btn-primary " id="btnlogin" name="login">Login Now</button>
+                <!-- <input type="submit" name="submit-btn" name="login" id="login" class="btn" value="login now"> -->
 
                 <!-- link the register page -->
                 <p>Do not have an account ?<a href="register.php">register now</a></p>
