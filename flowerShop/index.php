@@ -2,10 +2,11 @@
     include 'connection.php';
     session_start();
 
-    $user_id = $_SESSION['user_id'];
+    $user_id = $_SESSION['user_id'] ;
     if (!isset($user_id)) {
-          header('location:login.php');
+        header('location:login.php');
     }
+    
     
     /*----------------adding products to wishlist----------*/
     if(isset($_POST['add_to_wishlist'])){
@@ -150,7 +151,7 @@ if(mysqli_num_rows($cart_number)>0){
     ?>
     <div class="box-container">
         <?php
-        $select_products = mysqli_query($conn,"SELECT * FROM `products`") or die('query failed');
+        $select_products = mysqli_query($conn,"SELECT * FROM `products` ") or die('query failed');
         if(mysqli_num_rows($select_products) > 0) {
             while($fetch_products = mysqli_fetch_assoc($select_products)) {
         ?>

@@ -2,10 +2,10 @@
     include 'connection.php';
     session_start();
 
-    //  $user_id = $_SESSION['user_id'];
-     //if (!isset($user_id)) {
-          //header('location:login.php');
-   // }
+     $user_id = $_SESSION['user_id'];
+     if (!isset($user_id)) {
+          header('location:login.php');
+   }
     
     /*----------------adding products to wishlist----------*/
     if(isset($_POST['add_to_wishlist'])){
@@ -34,7 +34,7 @@
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
 
-   $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+   $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id' ") or die('query failed');
 if(mysqli_num_rows($cart_number)>0){
         $message[] = 'product already exist in cart';
     }else{
@@ -85,13 +85,13 @@ if(mysqli_num_rows($cart_number)>0){
     <div class="box-container">
         <?php
         $grand_total = 0;
-        $select_wishlist = mysqli_query($conn,"SELECT * FROM `wishlist` WHERE user_id='$user_id'") or die('query failed');
+        $select_wishlist = mysqli_query($conn,"SELECT * FROM `wishlist` ") or die('query failed');
         if(mysqli_num_rows($select_wishlist) > 0) {
             while($fetch_wishlist = mysqli_fetch_assoc($select_wishlist)) {
         ?>
         <form action="" method="post" class="box">
             <div class="icon">
-                <a href="wishlist.php?delete=<?php echo $fetch_wishlist['id'];?>" class="fa-solid fa-eye-slash"></a>
+                <a href="wishlist.php?delete=<?php echo $fetch_wishlist['id']; ?>" class="fa-solid fa-eye-slash"></a>
                 <a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="fa-solid fa-eye"></a>
             </div>
             <img src="image/<?php echo $fetch_wishlist['image']; ?>">

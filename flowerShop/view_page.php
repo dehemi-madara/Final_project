@@ -2,10 +2,10 @@
     include 'connection.php';
     session_start();
 
-    //  $user_id = $_SESSION['user_id'];
-     //if (!isset($user_id)) {
-          //header('location:login.php');
-   // }
+     $user_id = $_SESSION['user_id'];
+     if (!isset($user_id)) {
+          header('location:login.php');
+   }
     
     /*----------------adding products to wishlist----------*/
     if(isset($_POST['add_to_wishlist'])){
@@ -14,7 +14,7 @@
         $product_price = $_POST['product_price'];
         $product_image = $_POST['product_image'];
 
-        $wishlist_number = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+        $wishlist_number = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name = '$product_name' AND user_id = '$user_id' ") or die('query failed');
         $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
         if(mysqli_num_rows($wishlist_number)>0){
@@ -69,6 +69,7 @@ if(mysqli_num_rows($cart_number)>0){
         <h1>product detail</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
+     
     
     <?php
     if(isset($message)) {

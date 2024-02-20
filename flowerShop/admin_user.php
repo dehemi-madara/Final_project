@@ -3,15 +3,15 @@
     include 'connection.php';
     session_start();
 
-    // /* navigation bar icon through login/logout connection */
-    // $admin_id = $_SESSION['admin_id'];
-    // if (!isset($admin_id)) {
-    //     header('location:login.php');
-    // }
-    // if (isset($_POST['logout'])){
-    //     session_destroy();
-    //     header('location:login.php');
-    // }
+    /* navigation bar icon through login/logout connection */
+    $admin_id = $_SESSION['user_id'];
+    if (!isset($admin_id)) {
+        header('location:login.php');
+    }
+    if (isset($_POST['logout'])){
+        session_destroy();
+        header('location:login.php');
+    }
 
      /*--------------------deleting users details from database---------------------- */
     if(isset($_GET['delete'])) {
@@ -65,7 +65,7 @@
 
         <!-- get the users details from user table in the database -->
         <?php
-                $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
+                $select_users = mysqli_query($conn, "SELECT * FROM `users` ") or die('query failed');
                 if(mysqli_num_rows($select_users) > 0){
                     while($fetch_users = mysqli_fetch_assoc($select_users)){
                   

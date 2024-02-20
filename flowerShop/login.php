@@ -4,26 +4,44 @@
     session_start();
 
     if (isset($_POST['login'])) {
-        $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $filter_email = filter_var($_POST['email'],FILTER_SANITIZE_STRING);
+        $email = mysqli_real_escape_string($conn, $filter_email);
+
+        $filter_password = filter_var($_POST['password'],FILTER_SANITIZE_STRING);
+        $password = mysqli_real_escape_string($conn, $filter_password);
     
-        $query = "SELECT * FROM `users` WHERE email = '$email' AND password = '$password'";
-        // print_r($query);
-        //     die();
-        $result = mysqli_query($conn, $query) or die('Query failed');
+        $select_user = mysqli_query ($conn, "SELECT * FROM `users` WHERE email= '$email' AND password='$password'") or die ('query failed');
+         
     
-        if (mysqli_num_rows($result) > 0) {
-            $user_data = mysqli_fetch_assoc($result);
+        //$result = mysqli_query($conn, $query) or die('Query failed');
+    
+        if (mysqli_num_rows($select_user) > 0) {
+            $user_data = mysqli_fetch_assoc($select_user);
             
-            $_SESSION['user_id'] = $user_data['id'];
+            
+            // $_SESSION['admin_id'] = $user_data['id'];
     
             if ($user_data['user_type'] == 'admin') {
+                $_SESSION['admin_name'] = $row['name'];
+                $_SESSION['admin_email'] = $row['email'];
+                $_SESSION['admin_id'] = $row['id'];
+                $_SESSION['user_id'] = $user_data['id'];
                 header('location: admin.php');
-            } else {
-                header('location: index.php');
+
+
+
+            } else if ($user_data['user_type'] == 'user') {
+                    $_SESSION['user_name'] = $row['name'];
+                    $_SESSION['user_email'] = $row['email'];
+                    $_SESSION['user_id'] = $row['id'];
+                    $_SESSION['user_id'] = $user_data['id'];
+                        header('location: index.php');
             }
+
+
+        
         } else {
-            $error_message = 'Invalid email or password';
+            $message[] = 'Invalid email or password';
         }
     }
 

@@ -40,17 +40,17 @@ header("Location: login.php");
                 <form method="post" action="">
 
                     <button type="submit" name="logout" class="btn btn-danger"><i class="fa-solid fa-user"></i></button>
-                                        <!-- <?php
+                                        <?php
                         // Assuming $user_id is defined and sanitized
                         $select_wishlist = mysqli_query($conn, "SELECT * FROM wishlist WHERE user_id ='$user_id'") or die('query failed');
                         $wishlist_num_rows = mysqli_num_rows($select_wishlist);
-                    ?> -->
+                    ?>
                     <a href="wishlist.php"><i class="fa-solid fa-heart"></i><span>(<?php echo $wishlist_num_rows; ?>)</span></a>
-                                        <!-- <?php
+                                        <?php
                         // Assuming $user_id is defined and sanitized
                         $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id ='$user_id'") or die('query failed');
                         $cart_num_rows = mysqli_num_rows($select_cart);
-                    ?> -->
+                    ?>
                     <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i><span>(<?php echo $cart_num_rows; ?>)</span></a>
 
 
