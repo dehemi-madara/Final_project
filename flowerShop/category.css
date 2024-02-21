@@ -150,7 +150,7 @@
 .banner{
     width: 100%;
     height: 500px;
-    background-image: url('image/bg2.jpg');
+    background-image: url('image/dark bg1.jpg');
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -160,10 +160,31 @@
     font-size: 3rem;
     position: relative;
     text-transform: capitalize;
-
+    margin-left: 570px;
 }
 .banner p{
     font-size: 18px;
+    margin-left: 440px;
+}
+
+.bannerV{
+    width: 100%;
+    height: 500px;
+    background-image: url('image/dark bg1.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+.bannerV h1{
+    font-size: 3rem;
+    position: relative;
+    text-transform: capitalize;
+    margin-left: 550px;
+}
+.bannerV p{
+    font-size: 18px;
+    margin-left: 470px;
 }
 .view_page{
     padding: 5% 8%;
@@ -174,15 +195,17 @@
     align-items: center;
 }
 .view_page form img{
-    width: 50%;
+    width: 350px;
+    height: 450px;
+    margin-right: 50px;
 }
 .view_page form .name{
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--pink);
 }
 .view_page form .detail,
 .view_page form .price{
-    font-size: 18px;
+    font-size: 15px;
     color: #550A35;
     line-height: 2;
 }
@@ -191,7 +214,8 @@
 }
 
 .view_page form .quantity{
-    width: 60;
+    width: 500px;
+    height: 41px;
     box-shadow: none;
     border: 1px solid var(--pink);
     border-radius: 0;
@@ -201,45 +225,6 @@
     background: var(--pink);
     color: #fff;
     margin-top: 1rem;
-    padding: .8rem 1rem;
+    padding: .7rem 1rem;
 }
 
-/*---------------------wishlist page---------*/
-.disabled{
-    pointer-events: none;
-    opacity: .5;
-}
-.wishlist_total{
-    max-width: 1200px;
-    box-shadow: var(--box-shadow);
-    margin: 2rem auto;
-    border: 1px solid #550A35;
-    text-align: center;
-    padding: 3rem 0;
-    line-height: 2;
-    text-transform: capitalize;
-}
-.wishlist_total p{
-    font-size: 1.5rem;
-}
-.wishlist_total a{
-    text-transform: capitalize;
-    font-size: 16px;
-    margin-right: 2rem;
-}
-
-.qty{
-    display: flex;
-    justify-content: space-between;
-}
-.qty input[type= 'number']{
-    width: 35%;
-}
-.qty input[type='submit']{
-    width: 55%;
-    cursor: pointer;
-    background: var(--pink);
-    box-shadow: none;
-    color: #fff;
-}
-/*------------*/

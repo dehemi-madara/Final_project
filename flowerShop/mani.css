@@ -332,6 +332,7 @@ svg{
     display: flex;
     width: 200px;
     height: 40px;
+    cursor: pointer;
 }
 .footer-container .inner-footer .social-links i{
     display: flex;

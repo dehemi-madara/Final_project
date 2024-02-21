@@ -33,12 +33,14 @@
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
+    $product_quantity = $_POST['product_quantity'];
 
    $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 if(mysqli_num_rows($cart_number)>0){
         $message[] = 'product already exist in cart';
     }else{
-        mysqli_query($conn, "INSERT INTO `cart` (`user_id`, `pid` ,`name`, `price`,`image`) VALUES('$user_id','$product_id', '$product_name','$product_price','$product_image')");
+        mysqli_query($conn, "INSERT INTO `cart` (`user_id`, `pid` ,`name`, `price`,`quantity`,`image`) 
+        VALUES('$user_id','$product_id', '$product_name','$product_price','$product_quantity','$product_image')");
         $message[]='products successfully added in cart';
     }
 
@@ -57,7 +59,7 @@ if(mysqli_num_rows($cart_number)>0){
     rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="mani.css">
-    <link rel="stylesheet" type="text/css" href="category.css">
+    <link rel="stylesheet" type="text/css" href="Category.css">
     
     <title>flower shop</title>
 </head>
@@ -90,11 +92,12 @@ if(mysqli_num_rows($cart_number)>0){
         ?>
         <form action="" method="post" class="box">
             <img src="image/<?php echo $fetch_products['image']; ?>">
-            <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+            <div class="price">Rs.<?php echo $fetch_products['price']; ?>/-</div>
             <div class="name"><?php echo $fetch_products['name']; ?></div>
             <input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
             <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
             <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
+            <input type="hidden" name="product_quantity" value="1" min="0">
             <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
             <div class="icon">
                 <a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="fa-solid fa-eye"></a>

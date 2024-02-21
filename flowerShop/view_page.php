@@ -39,7 +39,8 @@
 if(mysqli_num_rows($cart_number)>0){
         $message[] = 'product already exist in cart';
     }else{
-        mysqli_query($conn, "INSERT INTO `cart` (`user_id`, `pid` ,`name`, `price`,`quantity`,`image`) VALUES('$user_id','$product_id', '$product_name','$product_price','$product_quantity','$product_image')");
+        mysqli_query($conn, "INSERT INTO `cart` (`user_id`, `pid` ,`name`, `price`,`quantity`,`image`) 
+        VALUES('$user_id','$product_id', '$product_name','$product_price','$product_quantity','$product_image')");
         $message[]='products successfully added in cart';
     }
 
@@ -58,18 +59,16 @@ if(mysqli_num_rows($cart_number)>0){
     rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="mani.css">
-    <link rel="stylesheet" type="text/css" href="category.css">
-    
+    <link rel="stylesheet" type="text/css" href="Category.css">
     <title>flower shop</title>
 </head>
 <body>
 
     <?php include 'header.php'; ?>
-    <div class="banner">
+    <div class="bannerV">
         <h1>product detail</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
-     
     
     <?php
     if(isset($message)) {
@@ -89,26 +88,23 @@ if(mysqli_num_rows($cart_number)>0){
             $select_products= mysqli_query($conn,"SELECT * FROM  `products` WHERE id ='$pid'") or die ('query failed');
             if(mysqli_num_rows($select_products)>0){
                 while($fetch_products = mysqli_fetch_assoc($select_products)){
-
-         
         
         ?>
         <form action="" method="post" class="box">
             <img src="image/<?php echo $fetch_products['image']; ?>">
             <div class="detail">
-            <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
-            <div class="name"><?php echo $fetch_products['name']; ?></div>
-            <div class="detail"><?php echo $fetch_products['product_detail']; ?></div>
-            <input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
-            <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
-            <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
-            <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
-            <div class="icon">
-                <button type="submit" name="add_to_wishlist" class="fa-solid fa-heart"></button>
-                <input type="number" name ="product_quantity" value="1" min="0" class="quantity">
-                <button type="submit" name="add_to_cart" class="fa-solid fa-cart-shopping"></button>
-            </div>
-
+                <div class="price">Rs.<?php echo $fetch_products['price']; ?>/-</div>
+                <div class="name"><?php echo $fetch_products['name']; ?></div>
+                <div class="detail"><?php echo $fetch_products['product_detail']; ?></div>
+                <input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
+                <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
+                <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
+                <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
+                <div class="icon">
+                    <button type="submit" name="add_to_wishlist" class="fa-solid fa-heart"></button>
+                    <input type="number" name ="product_quantity" value="1" min="0" class="quantity">
+                    <button type="submit" name="add_to_cart" class="fa-solid fa-cart-shopping"></button>
+                </div>
             </div>
         </form>
         <?php 

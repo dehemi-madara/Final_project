@@ -1,0 +1,87 @@
+/*---------------------wishlist page---------*/
+
+.box-container form .btn2{
+    text-transform: capitalize;
+    font-size: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    background: #550A35;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 3px;
+    border: 2px solid var(--pink);
+}
+
+.box-container form .btn2 i{
+    color: #fff;
+    background: #550A35;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+
+.empty{
+    display: flex;
+}
+
+.disabled{
+    pointer-events: none;
+    opacity: .5;
+}
+.wishlist_total{
+    max-width: 1200px;
+    box-shadow: var(--box-shadow);
+    margin: 2rem auto;
+    border: 1px solid #550A35;
+    text-align: center;
+    padding: 3rem 0;
+    line-height: 2;
+    text-transform: capitalize;
+}
+.wishlist_total p{
+    font-size: 1.7rem;
+}
+
+.qty{
+    display: flex;
+    justify-content: space-between;
+}
+.qty input[type= 'number']{
+    width: 35%;
+}
+.qty input[type='submit']{
+    width: 55%;
+    cursor: pointer;
+    background: var(--pink);
+    box-shadow: none;
+    color: #fff;
+}
+
+.wishlist_total a{
+    text-transform: capitalize;
+    font-size: 16px;
+    margin-right: 2rem;
+}
+.wishlist_total .btn2{
+    text-transform: capitalize;
+    font-size: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    background: #550A35;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 3px;
+    border: 2px solid var(--pink);
+}
+
+
+
+/*------------*/
