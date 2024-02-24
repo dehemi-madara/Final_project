@@ -62,3 +62,48 @@
     border-radius: 3px;
     border: 2px solid var(--pink);
 }
+
+/*-----------------------about us page--------------------------*/
+.about{
+    padding: 4%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.about .row{
+    justify-content: center;
+    align-items: center;
+}
+
+.about .row .detail{
+    width: 90%;
+    margin: 1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+.about .row .detail p{
+    margin-bottom: 1rem;
+}
+.about .row .img-box img{
+    width: 90%;
+}
+.about .row .detail h1{
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--pink);
+}
+
+.about .row .detail .btn2{
+    text-transform: capitalize;
+    font-size: 16px;
+    display: inline-flex;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    background: #550A35;
+    color: #fff;
+    font-weight: 500;
+    border-bottom: 2px;
+    border: 2px solid var(--pink);
+}
+/*-------jrfiyvj-----*/

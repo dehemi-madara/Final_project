@@ -6,6 +6,18 @@
      if (!isset($user_id)) {
           header('location:login.php');
    }
+
+   
+    /*----------------update products to cart ---------*/
+    if (isset($_POST['update_quantity_btn'])) {
+        $update_quantity_id = $_POST['update_quantity_id'];
+        $update_value = $_POST['update_quantity'];
+
+        $update_query = mysqli_query($conn,"UPDATE `cart` SET quantity='$update_value' WHERE id='$update_quantity_id'") or die('query failed');
+        if ($update_query) {
+            header('location:cart.php');
+        }
+    }
     
     /*----------------adding products to wishlist----------*/
    
