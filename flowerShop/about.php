@@ -21,7 +21,8 @@
     <link rel="stylesheet" type="text/css" href="mani.css">
     <link rel="stylesheet" type="text/css" href="Category.css">
     <link rel="stylesheet" type="text/css" href="cart.css">
-    
+    <link rel="stylesheet" type="text/css" href="services.css">
+
     <title>flower shop</title>
 </head>
 <body>
@@ -69,6 +70,94 @@
                 <h3>SUPPER FLEXIBLE</h3>
                 <p>Customize recipient, date, or flowers, Skip or cancel anytime.</p>
             </div>
+        </div>
+    </div>
+    <div class="stylist">
+        <h1 class="title">Florial stylist</h1>
+        <p>Meet the Team that Makes Miracles Happen</p>
+        <div class="box-container">
+            <div class="box">
+                <div class="img-box">
+                    <img src="image/social1.jpg">
+                    <div class="social-links">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                </div>
+                <h3>flower girls</h3>
+                <p>developer</p>
+            </div>
+            <div class="box">
+                <div class="img-box">
+                    <img src="image/social2.jpg">
+                    <div class="social-links">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                </div>
+                <h3>flower girls</h3>
+                <p>developer</p>
+            </div>
+            <div class="box">
+                <div class="img-box">
+                    <img src="image/social3.jpg">
+                    <div class="social-links">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                </div>
+                <h3>flower girls</h3>
+                <p>developer</p>
+            </div>
+        </div>
+    </div>
+    <div class="testamonial-container">
+        <h1 class="title">what people say</h1>
+        <div class="container">
+            <div class="testamonial-item active">
+                <img src="image/person1.jpg">
+                <h3>flower girls</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Ipsum, excepturi. Nobis maiores eveniet voluptatibus 
+                    dignissimos possimus quod recusandae, ex nesciunt aliquid? 
+                    Beatae suscipit, dicta vero minima facilis, fugit unde, 
+                    aliquam provident et nobis ipsa saepe voluptatum nam fuga 
+                    debitis impedit at dignissimos odit! Quae nobis deleniti 
+                    voluptates ut pariatur ducimus?
+                </p>
+            </div>
+            <div class="testamonial-item">
+                <img src="image/person2.jpg">
+                <h3>flower girls</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Ipsum, excepturi. Nobis maiores eveniet voluptatibus 
+                    dignissimos possimus quod recusandae, ex nesciunt aliquid? 
+                    Beatae suscipit, dicta vero minima facilis, fugit unde, 
+                    aliquam provident et nobis ipsa saepe voluptatum nam fuga 
+                    debitis impedit at dignissimos odit! Quae nobis deleniti 
+                    voluptates ut pariatur ducimus?
+                </p>
+            </div>
+            <div class="testamonial-item">
+                <img src="image/person3.jpg">
+                <h3>flower girls</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Ipsum, excepturi. Nobis maiores eveniet voluptatibus 
+                    dignissimos possimus quod recusandae, ex nesciunt aliquid? 
+                    Beatae suscipit, dicta vero minima facilis, fugit unde, 
+                    aliquam provident et nobis ipsa saepe voluptatum nam fuga 
+                    debitis impedit at dignissimos odit! Quae nobis deleniti 
+                    voluptates ut pariatur ducimus?
+                </p>
+            </div>
+            <div class="left-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="right-arrow"><i class="fa-solid fa-arrow-right"></i></div>
         </div>
     </div>
 
