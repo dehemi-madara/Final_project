@@ -47,6 +47,30 @@
             </div>
         </div>
     </div>
+    <div class="banner-2">
+        <h1>Let Us Make Your Wedding Flawless</h1>
+        <a href="shop.php" class="btn2">shop now</a>
+    </div>
+    <div class="services">
+        <h1 class="title">our services</h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fa-solid fa-percent"></i>
+                <h3>30% OFF + FREE SHIPPING</h3>
+                <p>Starting at Rs.10,000. Plus,get Rs.50,000 creditlyear on regular orders</p>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-asterisk"></i>
+                <h3>FRESHEST BLOOMS</h3>
+                <p>Exlusive farm-fresh flowers with our Happiness Guarantee</p>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-bell"></i>
+                <h3>SUPPER FLEXIBLE</h3>
+                <p>Customize recipient, date, or flowers, Skip or cancel anytime.</p>
+            </div>
+        </div>
+    </div>
 
     <?php include 'footerr.php'; ?>
 

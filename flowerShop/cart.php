@@ -21,10 +21,10 @@
     
     /*----------------adding products to wishlist----------*/
    
-  /*----------------adding products to cart----------*/
+/*----------------adding products to cart----------*/
   
 
-/* ------------------------ delete products to wishlist ------------------------- */
+/* ------------------------ delete product to cart ------------------------- */
 if(isset($_GET['delete'])) {
     $delete_id = $_GET['delete'];
 
@@ -32,7 +32,7 @@ if(isset($_GET['delete'])) {
 
     header('location:cart.php');
 }
-/* ------------------------ delete products to wishlist ------------------------- */
+/* ------------------------ delete products to cart ------------------------- */
 if(isset($_GET['delete_all'])) {
 
     mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');

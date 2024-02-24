@@ -30,6 +30,7 @@
 } 
 
 /* ------------------------ delete products to wishlist ------------------------- */
+
 if(isset($_GET['delete'])) {
     $delete_id = $_GET['delete'];
 
