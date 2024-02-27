@@ -156,8 +156,8 @@
                     voluptates ut pariatur ducimus?
                 </p>
             </div>
-            <div class="left-arrow"><i class="fa-solid fa-arrow-left"></i></div>
-            <div class="right-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="left-arrow" onclick="nextSlide();"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="right-arrow" onclick="prevSlide();"><i class="fa-solid fa-arrow-right"></i></div>
         </div>
     </div>
 
@@ -167,6 +167,7 @@
    
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="scriptcloseedit.js"></script>
-    
+    <script type="text/javascript" src="scriptTestimonial.js"></script>
+
 </body>
 </html>

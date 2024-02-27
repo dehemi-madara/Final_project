@@ -117,6 +117,7 @@
     padding: 1rem;
     transition: .4s;
     display: none;
+    width: 50vw;
 }
 .container .testamonial-item.active{
     display: block;

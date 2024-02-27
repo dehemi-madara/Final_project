@@ -97,6 +97,7 @@ header{
     box-shadow: var(--box-shadow);
     position: sticky;
     z-index: 1000;
+    position: fixed;
 }
 .flex{
     max-width: 1500px;
