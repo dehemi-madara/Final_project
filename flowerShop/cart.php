@@ -124,13 +124,12 @@ if(isset($_GET['delete_all'])) {
 </div>
 
 <div class="dlt">
-    <a href="cart.php?delete_all" class="btn2">delete all</a>
+    <a href="cart.php?delete_all" class="btn2" onclick="return confirm('Do you want to delete all from cart')">delete all</a>
 </div>
 <div class="cart_total">
     <p>Total amount payable :  <span>Rs.<?php echo $grand_total ?>/-</span></p>
     <a href="shop.php" class ="btn2">Continue shopping</a>
-    <a href="chechout.php" class="btn2 <?php echo ($grand_total > 1) ? '' : 'disabled' ?>" 
-    onclick="return confirm('Do you want to delete all from cart')">proceed to check out</a>
+    <a href="checkOut.php" class="btn2 <?php echo ($grand_total > 1) ? '' : 'disabled' ?>">proceed to check out</a>
 </div>
 
     
