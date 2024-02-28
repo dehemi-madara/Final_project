@@ -517,4 +517,8 @@ svg{
         display: block;
         margin: 2rem;
     }
+    .form-container .form-section form{
+        width: 90%;
+        margin: auto;
+    }
 }
