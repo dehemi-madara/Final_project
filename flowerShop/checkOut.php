@@ -54,7 +54,9 @@
     <link rel="stylesheet" type="text/css" href="order.css">
     <link rel="stylesheet"type="text/css"href="Wishlist.css">
     <link rel="stylesheet" type="text/css" href="Contact.css">
-    <link rel="stylesheet" type="text/css" href="checkOut.css">
+    <link rel="stylesheet" type="text/css" href="check.css">
+    <link rel="stylesheet" type="text/css" href="Pay.css">
+    
 
     <title>flower shop</title>
 </head>
@@ -80,26 +82,50 @@
         }
         ?>
         <div class="display-order">
-            <?php 
-                $select_cart=mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id='$user_id'") or die('query failed');
-                $total=0;
-                $grand_total=0;
-                if(mysqli_num_rows($select_cart)>0) {
-                    while($fetch_cart=mysqli_fetch_assoc($select_cart)){
-                        $total_price=($fetch_cart['price']* $fetch_cart['quantity']);
-                        $grand_total = $total+=$total_price;
-            ?>
-            <span><?= $fetch_cart['name']; ?>(<?= $fetch_cart['quantity']; ?>)</span>
-            <?php 
-                    }
-                }
-            ?>
-            <span class="grand_total">Total amount payable : Rs. <?= $grand_total; ?>/-</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php 
+                                    $select_cart=mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id='$user_id'") or die('query failed');
+                                    $total=0;
+                                    $grand_total=0;
+                                    if(mysqli_num_rows($select_cart)>0) {
+                                        while($fetch_cart=mysqli_fetch_assoc($select_cart)){
+                                            $total_price=($fetch_cart['price'] * $fetch_cart['quantity']);
+                                            $grand_total += $total_price;
+                                ?>
+                                <tr>
+                                    <td><?= $fetch_cart['name']; ?></td>
+                                    <td>Rs. <?= $fetch_cart['price']; ?></td>
+                                    <td><?= $fetch_cart['quantity']; ?></td>
+                                    <td>Rs. <?= $total_price; ?></td>
+                                </tr>
+                                <?php 
+                                        }
+                                    }
+                                ?>
+                            </tbody>
+                        </table>
+                        <div class="delivery">
+                            <span>Delivery Price: Rs. 300</span>
+                        </div>
+                        <?php 
+                            $grand_total += 300; // Adding delivery price to grand total
+                        ?>
+                        <span class="grand_total">Total amount payable : Rs. <span id="total_amount"><?= $grand_total; ?></span>/-</span>
         </div>
+
         <form method="post">
             <div class="input-field">
                 <label>your name</label>
-                <input type="text" name="name" placeholder="Enter your name">
+                <input type="text" name="Name" placeholder="Enter your name">
             </div>
             <div class="input-field">
                 <label>your number</label>
@@ -118,22 +144,15 @@
                 </select>
             </div>
             <div class="input-field">
-                <label>address line 1:</label>
-                <input type="text" name="home" placeholder="e.g home no.">
-            </div>
-            <div class="input-field">
-                <label>address line 2:</label>
-                <input type="text" name="street" placeholder="e.g street name">
-            </div>
-            <div class="input-field">
-                <label>city :</label>
-                <input type="text" name="city" placeholder="e.g kurunegala">
+                <label>address :</label>
+                <input type="text" name="home" placeholder="e.g  no.236/2, Kumbukgete, Kurunegala">
             </div>
             <div class="input-field">
                 <label>pin code</label>
                 <input type="number" name="pin" placeholder="e.g 110012">
             </div>
-            <input type="submit" name="order_btn" class="btn" value="order now">
+            <!--<input type="submit" name="order_btn" class="btn" value="order now">-->
+            <a href="Payment.php" class ="btn2">order now</a>
         </form>
     </div>
 

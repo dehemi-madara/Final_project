@@ -19,16 +19,15 @@
 }
 .display-order span{
     display: inline-block;
-    background: #ececec;
-    padding: .4rem;
     margin: .5rem auto;
     border-radius: 3px;
     text-transform: capitalize;
 }
 .display-order .grand_total {
-    width: 80%;
+    width: 60%;
+    height: 50px;
     background: var(--pink);
-    color: #fff;
+    color: #fdfdfd;
     cursor: pointer;
 }
 .checkout-form form{
@@ -38,8 +37,23 @@
     padding: 2rem;
     border-radius: 10px;
 }
+
+.checkout-form .btn2{
+    text-transform: capitalize;
+    font-size: 16px;
+    display: inline-flex;
+    justify-content: center;
+    width: 620px;
+    height: 40px;
+    background: #550A35;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 3px;
+    border: 2px solid var(--pink);
+    margin-top: 20px;
+}
 .input-field label{
-    margin: .6rem 0;
+    margin: .2rem 0;
 }
 .input-field .select{
     width: 100%;

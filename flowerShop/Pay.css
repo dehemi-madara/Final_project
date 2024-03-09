@@ -1,0 +1,38 @@
+.display-order {
+    margin: 20px;
+    margin-left: 330px;
+    height: 380px;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 20px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.delivery {
+    margin-top: 10px;
+}
+
+.delivery span {
+    font-size: 20px;
+}
+
+.grand_total {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    height: 80px;
+}
