@@ -36,7 +36,8 @@
     <link rel="stylesheet" type="text/css" href="styleDashboard.css">
     <link rel="stylesheet" type="text/css" href="stylePro.css">
     <link rel="stylesheet" type="text/css" href="styleeditp.css">
-    <link rel="stylesheet" type="text/css" href="styleuser.css">
+    
+    <link rel="stylesheet" type="text/css" href="userTable.css">
     <title>admin pannel</title>
 </head>
 <body>
@@ -60,33 +61,42 @@
     
     <!-- user container -->
     <section class="user-container">
-        <h1 class="title">total registered users</h1>
-        <div class="box-container">
-
-        <!-- get the users details from user table in the database -->
-        <?php
-                $select_users = mysqli_query($conn, "SELECT * FROM `users` ") or die('query failed');
-                if(mysqli_num_rows($select_users) > 0){
-                    while($fetch_users = mysqli_fetch_assoc($select_users)){
-                  
-
-            ?>
-
-            <!-- set the above selected details to users boxes in user page -->
-            <div class="box">
-                <p>user id: <span><?php echo $fetch_users['id']; ?></span></p>
-                <p>user name: <span><?php echo $fetch_users['name']; ?></span></p>
-                <p>email: <span><?php echo $fetch_users['email']; ?></span></p>
-                <p>user type: <span style="color:<?php if($fetch_users['user_type']=='admin'){echo 'orange';}; ?>">
-                <?php echo $fetch_users['user_type']; ?></span></p>
-                <a href="admin_user.php?delete=<?php echo $fetch_users['id']; ?>" class="delete" onclick = "
-                    return conform('delete');">delete</a>
-            </div>
-            <?php 
-                    }
-                } 
-
-            ?>
+        <h1 class="title">Total Registered Users</h1>
+        <div class="box-container1">
+            <table class="user-details">
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>User Type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        // Fetching user details from the database
+                        $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('Query failed');
+                        if(mysqli_num_rows($select_users) > 0){
+                            while($fetch_users = mysqli_fetch_assoc($select_users)){
+                    ?>
+                    <tr>
+                        <td><?php echo $fetch_users['id']; ?></td>
+                        <td><?php echo $fetch_users['name']; ?></td>
+                        <td><?php echo $fetch_users['email']; ?></td>
+                        <td style="color:<?php echo ($fetch_users['user_type'] == 'admin') ? 'orange' : ''; ?>">
+                            <?php echo $fetch_users['user_type']; ?>
+                        </td>
+                        <td>
+                            <a href="admin_user.php?delete=<?php echo $fetch_users['id']; ?>" class="delete" onclick="return confirm('Delete?')">Delete</a>
+                        </td>
+                    </tr>
+                    <?php 
+                            }
+                        } 
+                    ?>
+                </tbody>
+            </table>
         </div>
     </section>
     <script type="text/javascript" src="script.js"></script>

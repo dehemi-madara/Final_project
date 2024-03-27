@@ -1,0 +1,55 @@
+/* Style for the order-container section */
+.order-container {
+    margin: 20px;
+    background-color: #f5d8d8;
+}
+
+/* Style for the title */
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style for the order-details table */
+.order-details {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style for the table header */
+.order-details th {
+    background-color: #f2f2f2;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style for the table data */
+.order-details td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style for alternating row colors */
+.order-details tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style for the delete link */
+.delete {
+    color: rgb(12, 6, 6);
+    text-decoration: none;
+    width: 30px;
+}
+
+/* Hover effect for the delete link */
+.delete:hover {
+    text-decoration: underline;
+}
+
+/* Style for the empty message */
+.empty {
+    text-align: center;
+    padding: 10px;
+    color: #666;
+}

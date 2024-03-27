@@ -23,6 +23,8 @@
     <link rel="stylesheet" type="text/css" href="order.css">
     <link rel="stylesheet"type="text/css"href="Wishlist.css">
     <link rel="stylesheet" type="text/css" href="Contact.css">
+    
+    <link rel="stylesheet" type="text/css" href="COrder.css">
 
     <title>flower shop</title>
 </head>
@@ -34,39 +36,77 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
 
-    <div class="order-section">
-        <div class="box-container">
-            <?php 
-                $select_orders = mysqli_query($conn,"SELECT * FROM `orders` WHERE user_id='$user_id'") 
-                or die('query failed');
-                if (mysqli_num_rows($select_orders)>0) {
-                    while($fetch_orders=mysqli_fetch_assoc($select_orders)){
-
-            ?>
-            <div class="box">
-                <p>place on : <span><?php echo $fetch_orders['placed_on']; ?></span></p>
-                <p>name : <span><?php echo $fetch_orders['name']; ?></span></p>
-                <p>number : <span><?php echo $fetch_orders['number']; ?></span></p>
-                <p>email : <span><?php echo $fetch_orders['email']; ?></span></p>
-                <p>address : <span><?php echo $fetch_orders['address']; ?></span></p>
-                <p>paymentmethod : <span><?php echo $fetch_orders['method']; ?></span></p>
-                <p>your order : <span><?php echo $fetch_orders['total_products']; ?></span></p>
-                <p>total price : <span><?php echo $fetch_orders['total_price']; ?></span></p>
-                <p>payment status : <span><?php echo $fetch_orders['payment_status']; ?></span></p>
-                
-            </div>
-            <?php 
-                    }
-                }else{
-                    echo '
-                    <div class="empty">
-                        <img src="image/empty1.jpg">
-                        <p>No order plased yet!!</p>
+    <?php 
+        if(isset($message)){
+            foreach($message as $message) {
+                echo'
+                    <div class="message">
+                        <span>'.$message.'</span>
+                        <i class="bi bi-x-circle" onclick="this.parentElement.remove()"></i>
                     </div>
                 ';
+            }
+        }
+    ?>
+
+    <div class="order-section">
+    <div class="box-container">
+    <table class="order-details">
+        <thead>
+            <tr>
+                <th>Placed On</th>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Payment Method</th>
+                <th>Total Products</th>
+                <th>Total Price</th>
+                <th>Payment Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+                // Ensure $user_id is properly set
+                $user_id = $_SESSION['user_id'];
+                
+                // Query to fetch orders for the current user
+                $select_orders = mysqli_query($conn,"SELECT * FROM `orders` WHERE user_id='$user_id'") 
+                                or die('Query failed');
+                
+                // Check if there are any orders
+                if (mysqli_num_rows($select_orders) > 0) {
+                    // Loop through each order
+                    while($fetch_orders = mysqli_fetch_assoc($select_orders)){
+            ?>
+            <tr>
+                <td><?php echo $fetch_orders['placed_on']; ?></td>
+                <td><?php echo $fetch_orders['name']; ?></td>
+                <td><?php echo $fetch_orders['number']; ?></td>
+                <td><?php echo $fetch_orders['email']; ?></td>
+                <td><?php echo $fetch_orders['address']; ?></td>
+                <td><?php echo $fetch_orders['method']; ?></td>
+                <td><?php echo $fetch_orders['total_products']; ?></td>
+                <td><?php echo $fetch_orders['total_price']; ?></td>
+                <td><?php echo $fetch_orders['payment_status']; ?></td>
+            </tr>
+            <?php 
+                    }
+                } else {
+                    // Display a message if no orders found
+                    echo '
+                    <tr>
+                        <td colspan="9" class="empty">No orders placed yet!!</td>
+                    </tr>
+                    ';
                 }
             ?>
-        </div>
+        </tbody>
+    </table>
+</div>
+
+
+
     </div>
 
 <?php include 'footerr.php'; ?>

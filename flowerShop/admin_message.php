@@ -38,7 +38,8 @@
     <link rel="stylesheet" type="text/css" href="stylePro.css">
     <link rel="stylesheet" type="text/css" href="styleeditp.css">
     <link rel="stylesheet" type="text/css" href="styleLogin.css">
-    <link rel="stylesheet" type="text/css" href="styleuser.css">
+    
+    <link rel="stylesheet" type="text/css" href="messageT.css">
     <title>admin pannel</title>
 </head>
 <body>
@@ -59,39 +60,44 @@
     ?>
     <!-- Message container -->
     <section class="user-container">
-        <!-- title -->
-        <h1 class="title">Messages</h1>
-        <!-- Message box -->
-        <div class="box-container">
-            <!-- select all rows from message table in database -->
+    <!-- title -->
+    <h1 class="title">Messages</h1>
+    <!-- Message table -->
+    <table class="message-table">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
             <?php
-                $select_message = mysqli_query($conn, "SELECT * FROM `message`") or die('query failed');
-                if(mysqli_num_rows($select_message) > 0){
-                    while($fetch_message = mysqli_fetch_assoc($select_message)){
-                  
-
+            $select_message = mysqli_query($conn, "SELECT * FROM `message`") or die('query failed');
+            if(mysqli_num_rows($select_message) > 0){
+                while($fetch_message = mysqli_fetch_assoc($select_message)){
             ?>
-            <!-- set the above selected details to message boxes in message page -->
-            <div class="box">
-                <p>user id: <span><?php echo $fetch_message['user_id'] ;?></span></p>
-                <p>user name : <span><?php echo $fetch_message['name']; ?></span></p>
-                <p>email: <span><?php echo $fetch_message['email']; ?></span></p>
-                <p><?php echo $fetch_message['message']; ?></p>
-                <!-- delete button -->
-                <a href="admin_message.php?delete=<?php echo $fetch_message['id']; ?>" class="delete" onclick = "
-                    return conform('delete this');">Delete</a>
-            </div>
-            <!-- if no messages yet, print below message on message container -->
+                <tr>
+                    <td><?php echo $fetch_message['user_id'] ;?></td>
+                    <td><?php echo $fetch_message['name']; ?></td>
+                    <td><?php echo $fetch_message['email']; ?></td>
+                    <td><?php echo $fetch_message['message']; ?></td>
+                    <td>
+                        <a href="admin_message.php?delete=<?php echo $fetch_message['id']; ?>" class="delete" onclick="return confirm('Delete this?')">Delete</a>
+                    </td>
+                </tr>
             <?php 
-                    }
-                }else{
-                    echo '<p class="empty"> no message yet</p>';
                 }
-
+            } else {
+                echo '<tr><td colspan="5" class="empty">No messages yet</td></tr>';
+            }
             ?>
-        </div>
-        
-    </section>
+        </tbody>
+    </table>
+</section>
+
     <!-- import javascript part for icons -->
     <script type="text/javascript" src="script.js"></script>
 </body>

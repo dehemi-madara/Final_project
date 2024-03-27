@@ -21,7 +21,6 @@
 
         header('location:admin_orders.php');
     }
-
      /*-------------- update order details --------------- */
 
      if(isset($_POST['update_order'])) {
@@ -29,7 +28,7 @@
         $update_payment = $_POST['update_payment'];
 
         mysqli_query($conn, "UPDATE `orders` SET payment_status='$update_payment' WHERE id='$order_id'") or die('query failed');
-        $message[]='payment status updated successfully';
+        $message[]='Payment status updated successfully';
     }
 
 
@@ -44,11 +43,11 @@
     rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styleHeader.css">
-    <link rel="stylesheet" type="text/css" href="order.css">
     <link rel="stylesheet" type="text/css" href="styleDashboard.css">
     <link rel="stylesheet" type="text/css" href="stylePro.css">
     <link rel="stylesheet" type="text/css" href="styleeditp.css">
     <link rel="stylesheet" type="text/css" href="styleLogin.css">
+    <link rel="stylesheet" type="text/css" href="orderTable.css">
     <title>admin pannel</title>
 </head>
 <body>
@@ -69,52 +68,67 @@
         }
     ?>
      <!-- order container -->
-    <section class="order-container">
-        <h1 class="title">total placed orders</h1>
-        <div class="box-container">
-            <!-- select all rows from orders table in database -->
-            <?php
-                $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
-                if(mysqli_num_rows($select_orders) > 0){
-                    while($fetch_orders = mysqli_fetch_assoc($select_orders)){
-                  
+     <section class="order-container">
+    <h1 class="title">Total Placed Orders</h1>
 
-            ?>
-             <!-- set the above selected details to orders boxes in orders page -->
-            <div class="box">
-                <p>user Name: <span><?php echo $fetch_orders['name'];?></span></p>
-                <p>user Id: <span><?php echo $fetch_orders['user_id'];?></span></p>
-                <p>placed on: <span><?php echo $fetch_orders['placed_on'];?></span></p>
-                <p>number: <span><?php echo $fetch_orders['number'];?></span></p>
-                <p>email: <span><?php echo $fetch_orders['email'];?></span></p>
-                <p>total price: Rs. <span><?php echo $fetch_orders['total_price'];?>/-</span></p>
-                <p>method: <span><?php echo $fetch_orders['method'];?></span></p>
-                <p>address: <span><?php echo $fetch_orders['address'];?></span></p>
-                <p>total products: <span><?php echo $fetch_orders['total_products'];?></span></p>
+    <?php
+    $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('Query failed');
+    if(mysqli_num_rows($select_orders) > 0){
+    ?>
+        <table class="order-details">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>User ID</th>
+                    <th>Placed On</th>
+                    <th>Number</th>
+                    <th>Email</th>
+                    <th>Total Price</th>
+                    <th>Method</th>
+                    <th>Address</th>
+                    <th>Total Products</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                while($fetch_orders = mysqli_fetch_assoc($select_orders)){
+                ?>
+                <tr>
+                    <td><?php echo $fetch_orders['name'];?></td>
+                    <td><?php echo $fetch_orders['user_id'];?></td>
+                    <td><?php echo $fetch_orders['placed_on'];?></td>
+                    <td><?php echo $fetch_orders['number'];?></td>
+                    <td><?php echo $fetch_orders['email'];?></td>
+                    <td>Rs. <?php echo $fetch_orders['total_price'];?>/-</td>
+                    <td><?php echo $fetch_orders['method'];?></td>
+                    <td><?php echo $fetch_orders['address'];?></td>
+                    <td><?php echo $fetch_orders['total_products'];?></td>
+                    <td>
+                        <form method="post">
+                            <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
+                            <select name="update_payment">
+                                <option disabled selected><?php echo $fetch_orders['payment_status'];?></option>
+                                <option value="pending">Pending</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                            <input type="submit" name="update_order" value="Update" class="btn">
+                        </form>
+                        <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" class="delete" onclick="return confirm('Delete this?')">Delete</a>
+                    </td>
+                </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+    <?php
+    } else {
+        echo '<p class="empty">No orders yet</p>';
+    }
+    ?>
+</section>
 
-                 <!-- create choose box for select payment status -->
-                <form method="post">
-                    <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
-                    <select name="update_payment">
-                        <option disabled selected><?php echo $fetch_orders['payment_status'];?></option>
-                        <option value="pending">Pending</option>
-                        <option value="completed">Completed</option>
-                    </select>
-                     <!-- update and delete button -->
-                    <input type="submit" name="update_order" value="update" class="btn">
-                    <a href="admin_order.php?delete=<?php echo $fetch_orders['id']; ?>" class="delete" onclick="return conform('delete this')">delete</a>
-                </form>
-            </div>
-            <!-- if no messages yet, print below message on message container -->
-            <?php 
-                    }
-                }else{
-                    echo '<p class="empty"> no orders yet</p>';
-                } 
-
-            ?>
-        </div>
-    </section>
     <!-- import javascript part for icons -->
     <script type="text/javascript" src="script.js"></script>
 </body>

@@ -1,0 +1,36 @@
+/* Style for the box-container */
+.box-container {
+    margin-top: 20px;
+}
+
+/* Style for the order-details table */
+.order-details {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style for the table header */
+.order-details th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style for the table data */
+.order-details td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style for alternating row colors */
+.order-details tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style for the empty message */
+.order-details .empty {
+    text-align: center;
+    padding: 10px;
+    color: #666;
+}
