@@ -12,7 +12,7 @@
     color: #fff;
     font-weight: 500;
     border-radius: 3px;
-    border: 2px solid var(--pink);
+    border: 2px solid var(--purple);
 }
 
 .box-container form .btn2 i{
@@ -57,7 +57,7 @@
 .qty input[type='submit']{
     width: 55%;
     cursor: pointer;
-    background: var(--pink);
+    background: var(--purple);
     box-shadow: none;
     color: #fff;
 }
@@ -79,7 +79,7 @@
     color: #fff;
     font-weight: 600;
     border-radius: 3px;
-    border: 2px solid var(--pink);
+    border: 2px solid var(--purple);
 }
 
 

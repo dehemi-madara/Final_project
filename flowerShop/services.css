@@ -2,7 +2,7 @@
     --white-alpha-40: rgba(255,255,255,0.40);
     --white-alpha-25: rgba(255,255,255,0.25);
     --backdrope-filter-blur: blur(5px);
-    --pink: #e84393;
+    --pink: #ab16d8;
     --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
 }
 
@@ -32,7 +32,7 @@
     color: #fff;
     padding: 1.5rem;
     margin: 2rem 0;
-    background: var(--pink);
+    background: var(--purple);
     text-align: center;
 }
 .stylist{
@@ -43,7 +43,7 @@
     padding: 3% 0;
 }
 .stylist h3{
-    color: var(--pink);
+    color: var(--purple);
     text-transform: uppercase;
     margin: .5rem 0;
 }
@@ -85,7 +85,7 @@
     transition: .3s;
 }
 .stylist .social-links i:hover{
-    background: var(--pink);
+    background: var(--purple);
     color: #fff;
 }
 .stylist .box-container .box h3{
@@ -123,7 +123,7 @@
     display: block;
 }
 .container .testamonial-item h3{
-    color: var(--pink);
+    color: var(--purple);
     font-size: 1.3rem;
     padding-bottom: .5rem;
     text-transform: capitalize;
@@ -142,7 +142,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--pink);
+    background: var(--purple);
     color: #fff;
     cursor: pointer;
     display: flex;
@@ -159,7 +159,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--pink);
+    background: var(--purple);
     color: #fff;
     cursor: pointer;
     display: flex;

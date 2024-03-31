@@ -2,7 +2,7 @@
     --white-alpha-40: rgba(255,255,255,0.40);
     --white-alpha-25: rgba(255,255,255,0.25);
     --backdrope-filter-blur: blur(5px);
-    --pink: #e84393;
+    --pink: #ab16d8;
     --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
 }
 
@@ -15,7 +15,7 @@
 }
 .box-container .box h2{
     font-size: 1.2rem;
-    color: var(--pink);
+    color: var(--purple);
     text-transform: uppercase;
     margin-top: .5rem;
 }
@@ -55,7 +55,7 @@
 }
 .form-containerC .form-section form h1{
     text-align: center;
-    color: var(--pink);
+    color: var(--purple);
     margin: 1rem 0;
 }
 .form-containerC .form-section form p{

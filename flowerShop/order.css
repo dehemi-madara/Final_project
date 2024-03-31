@@ -26,7 +26,7 @@
     text-align: center;
 }
 .order-container form select{
-    width: 100%;
+    width: 30%;
     margin: 1rem 0;
     padding: .5rem 0;
     cursor: pointer;
@@ -38,6 +38,7 @@
 }
 .box-container .delete {
     padding: .6rem 12%;
+    width:30% ;
 }
 .user-container .box-container,
 .message-container .box-container{
