@@ -126,6 +126,7 @@
     <link rel="stylesheet" type="text/css" href="styleDashboard.css">
     <link rel="stylesheet" type="text/css" href="stylePro.css">
     <link rel="stylesheet" type="text/css" href="styleeditp.css">
+    <link rel="stylesheet" type="text/css" href="All.css">
     <title>Document</title>
 </head>
 <body>
@@ -168,7 +169,7 @@
                  <!-- all image types accept -->
                 <input type="file" name="image" accept="image/jpg, image/png, image/jpeg, image/webp" required>
             </div>
-            <input type="submit" name="add_product" value="add product" class="btn">
+            <input type="submit" name="add_product" value="add product" class="btnAdd">
         </form>
     </section>
 
@@ -187,7 +188,7 @@
             ?>
             
              <!-- set the above selected details to products boxes in product page -->
-            <div class="box">
+            <div class="boxF">
                 <img src="image/<?php echo $fetch_products['image']; ?>">
                 
                 <p>price : Rs. <?php echo $fetch_products['price']; ?></p>

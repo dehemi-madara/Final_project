@@ -7,7 +7,6 @@
     --white-alpha-40: rgba(255,255,255,0.40);
     --white-alpha-25: rgba(255,255,255,0.25);
     --backdrope-filter-blur: blur(5px);
-    --pink: #e84393;
     --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
 }
 
@@ -20,16 +19,7 @@
     text-transform: capitalize;
     font-size: 16px;
 }
-.message{
-    text-align: center;
-    margin: 2rem auto;
-    font-size: 20px;
-    background: var(--pink);
-    color: #fff;
-    width: 50vw;
-    padding: 1rem;
-    border-radius: 5px;
-}
+
 .message i{
     cursor: pointer;
     float: right;
@@ -75,11 +65,7 @@ form .btn{
     color: #fff;
     text-transform: uppercase;
 }
-form .btn:hover{
-    background: transparent;
-    border: 2px solid var(--pink);
-    color: var(--pink);
-}
+
 .form-container h3{
     text-align: center;
     text-transform: uppercase;
@@ -108,14 +94,7 @@ header{
     margin: 0 ;
     margin-left: 30px;
 }
-.logo{
-    font-size: 2rem;
-    font-weight: bold;
-    color: #A74AC7;
-}
-.logo span{
-    color: #A74AC7;
-}
+
 .navbar {
     margin: 5px 20px 5px 200px;
 }
@@ -188,12 +167,6 @@ svg{
     background-size: cover;
     background-repeat: no-repeat;
 }
-.title{
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 15px;
-    color: #e84393;
-}
 
 .box-container{
     padding: 2% 8%;
@@ -233,28 +206,11 @@ svg{
     background-size: cover;
     height: 90vh;
 }
-.home-contact h1{
-    text-transform: uppercase;
-    margin: 1rem;
-    color: var(--pink);
-}
+
 .home-contact p{
     margin-bottom: 2rem;
 }
 
-.home-contact a{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    height: 50px;
-    background: #550A35;
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 600;
-    border-radius: 5px;
-    border: 2px solid var(--pink);
-}
 
 .footer-container{
     background-size: cover;
@@ -324,9 +280,6 @@ svg{
     margin-bottom: 10px;
     margin-left: 0;
 }
-.footer-container .inner-footer .card li:hover{
-    color: var(--pink);
-}
 .footer-container .inner-footer .social-links{
     /*margin-top: 1rem;*/
     margin-top: 1rem;
@@ -335,37 +288,8 @@ svg{
     height: 40px;
     cursor: pointer;
 }
-.footer-container .inner-footer .social-links i{
-    display: flex;
-    width: 50px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    background: var(--pink);
-    color: #fff;
-    border: 2px solid var(--pink);
-    transition: .6s;
-    box-shadow: 0 0 0.3rem #b41d64;
-    border-radius: 5px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    margin-left: 5px;
-}
-.footer-containner .inner-footer .social-links i:hover{
-    /*background: #550A35;*/
-    color: var(--pink);
-}
 
 
-.bottom-footer{
-    text-transform: capitalize;
-    text-align: center;
-    padding: 3rem 0;
-    color: var(--pink);
-    border: none;
-    margin-bottom: 70px;
-}
 
 /* home section --------------------------------------------------------------------- */
 .slider-show-container{
@@ -471,17 +395,7 @@ svg{
     font-size: 2rem;
     font-weight: 600;
 }
-.row .card a{
-    color: var(--pink);
-    font-size: 16px;
-    padding: 4px 4px;
-    border: 1px solid var(--pink);
-    text-transform: uppercase;
-}
-.row .card a:hover{
-    background: var(--pink);
-    color: #fff;
-}
+
 .row .card:nth-child(1){
     background: url('image/banner1.jpg');
 }

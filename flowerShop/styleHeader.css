@@ -6,7 +6,6 @@ body{
     --white-alpha-40: rgba(255,255,255,0.40);
     --white-alpha-25: rgba(255,255,255,0.25);
     --backdrope-filter-blur: blur(5px);
-    --pink: #e84393;
     --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
 }
 header{
@@ -29,11 +28,8 @@ header{
 .logo{
     font-size: 2rem;
     font-weight: bold;
-    color: #A74AC7;
 }
-.logo span{
-    color: #A74AC7;
-}
+
 .navbar {
     margin: 5px 20px 5px 200px;
 }

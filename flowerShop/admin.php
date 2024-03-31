@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="styleDashboard.css">
     <link rel="stylesheet" type="text/css" href="stylePro.css">
     <link rel="stylesheet" type="text/css" href="styleeditp.css">
+    <link rel="stylesheet" type="text/css" href="All.css">
     <title>admin pannel</title>
 </head>
 <body>

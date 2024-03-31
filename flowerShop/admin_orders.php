@@ -48,6 +48,7 @@
     <link rel="stylesheet" type="text/css" href="styleeditp.css">
     <link rel="stylesheet" type="text/css" href="styleLogin.css">
     <link rel="stylesheet" type="text/css" href="orderTable.css">
+    <link rel="stylesheet" type="text/css" href="All.css">
     <title>admin pannel</title>
 </head>
 <body>

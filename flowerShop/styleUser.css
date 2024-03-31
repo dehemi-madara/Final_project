@@ -8,7 +8,6 @@
     --white-alpha-40: rgba(255,255,255,0.40);
     --white-alpha-25: rgba(255,255,255,0.25);
     --backdrope-filter-blur: blur(5px);
-    --pink: #e84393;
     --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
 }
 .user-container{
@@ -43,9 +42,7 @@
 .user-container .box-container .box {
     padding-bottom: 3rem;
 }
-.user-container .box-container .box span {
-    color: var(--pink);
-}
+
 .user-container .box-container .box p:nth-child(4){
     margin-bottom: 2rem;
 }

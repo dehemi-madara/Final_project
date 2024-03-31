@@ -8,7 +8,7 @@
     --white-alpha-40: rgba(255,255,255,0.40);
     --white-alpha-25: rgba(255,255,255,0.25);
     --backdrope-filter-blur: blur(5px);
-    --pink: #e84393;
+  
     --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
 }
 .empty{
@@ -20,7 +20,7 @@
     text-align: center;
     margin: 2rem auto;
     font-size: 20px;
-    background: var(--pink);
+    
     color: #fff;
     width: 50vw;
     padding: 1rem;
@@ -70,7 +70,6 @@ textarea{
     cursor: pointer;
     background:  #550A35;
     width: 100%;
-    
     align-items: center;
     color: #fff;
     text-transform: uppercase;
@@ -78,8 +77,6 @@ textarea{
 
 #btnlogin:hover{
     background: transparent;
-    border: 2px solid var(--pink);
-    color: var(--pink);
 }
 .form-container h3{
     text-align: center;

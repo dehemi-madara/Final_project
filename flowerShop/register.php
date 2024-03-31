@@ -55,6 +55,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="styleLogin.css">
+        <link rel="stylesheet" type="text/css" href="All.css">
         <link rel="stylesheet" href="https://cdn jsdeliver.net npm bootstrap-icons@1.10.2/font bootstrap-icons.css">
         
         <title>user registration page</title>
@@ -67,8 +68,9 @@
                 <input type="text" name="name" placeholder="enter your name" required>
                 <input type="email" name="email" placeholder="enter your email" required>
                 <input type="password" name="password" placeholder="enter your password" required>
-                <input type="password" name="cpassword" placeholder="renter your password" required>
-                <input type="submit" name="submit-btn" class="btn" value="regisyer now">
+                <input type="password" name="cpassword" placeholder="enter your password" required>
+                <button type="submit" class="btn" id="btnlogin" name="submit-btn">Register Now</button>
+                
 
                 <!-- link login page -->
                 <p>Already have an account ?<a href="login.php">login now</a></p>

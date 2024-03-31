@@ -8,7 +8,6 @@
     --white-alpha-40: rgba(255,255,255,0.40);
     --white-alpha-25: rgba(255,255,255,0.25);
     --backdrope-filter-blur: blur(5px);
-    --pink: #e84393;
     --box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
 }
 .dashboard{
@@ -20,7 +19,6 @@
     text-align: center;
     text-transform: uppercase;
     margin-top: 15px;
-    color: #e84393;
 }
 
 .box-container{
@@ -40,7 +38,6 @@
     border-radius: 5px;
 }
 .box-container .box h3{
-    font-size: 3rem;
     color: #545bba;
 }
 .box-container .box p{

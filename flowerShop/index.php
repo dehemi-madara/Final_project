@@ -61,6 +61,10 @@
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="mani.css">
     <link rel="stylesheet" type="text/css" href="Category.css">
+    <link rel="stylesheet" type="text/css" href="All.css">
+    
+    <link rel="stylesheet" type="text/css" href="All1.css">
+
     
     <title>flower shop</title>
 </head>
@@ -157,7 +161,7 @@
         if(mysqli_num_rows($select_products) > 0) {
             while($fetch_products = mysqli_fetch_assoc($select_products)) {
         ?>
-        <form action="" method="post" class="box">
+        <form action="" method="post" class="boxS">
             <img src="image/<?php echo $fetch_products['image']; ?>">
             <div class="price">Rs.<?php echo $fetch_products['price']; ?>/-</div>
             <div class="name"><?php echo $fetch_products['name']; ?></div>

@@ -12,10 +12,7 @@
     border-radius: 5px;
     border: 1px solid #fef0ea;
 }
-.add-products form label{
-    text-transform: capitalize;
-    color: var(--pink);
-}
+
 .add-products form textarea{
     height: 200px;
 }
@@ -41,32 +38,16 @@
     text-align: center;
     border-radius: 5px;
 }
-.edit{
-    margin: .5rem;
-    text-transform: capitalize;
-    color: #fff;
-    background: var(--pink);
-    padding: .5rem 2rem;
-    border-radius: 5px;
-}
+
 .delete{
     margin: .5rem;
     text-transform: capitalize;
     color: #fff;
-    background: var(--pink);
     padding: .5rem 2rem;
     border-radius: 5px;
 }
-.edit:hover{
-    color: var(--pink);
-    background: transparent;
-    border: 2px solid var(--pink);
-}
-.delete:hover{
-    color: var(--pink);
-    background: transparent;
-    border: 2px solid var(--pink);
-}
+
+
 .show-products .box img{
     width: 80%;
 }

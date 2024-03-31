@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="styleDashboard.css">
     <link rel="stylesheet" type="text/css" href="stylePro.css">
     <link rel="stylesheet" type="text/css" href="styleeditp.css">
+    <link rel="stylesheet" type="text/css" href="All.css">
     
     <link rel="stylesheet" type="text/css" href="userTable.css">
     <title>admin pannel</title>
@@ -84,7 +85,7 @@
                         <td><?php echo $fetch_users['id']; ?></td>
                         <td><?php echo $fetch_users['name']; ?></td>
                         <td><?php echo $fetch_users['email']; ?></td>
-                        <td style="color:<?php echo ($fetch_users['user_type'] == 'admin') ? 'orange' : ''; ?>">
+                        <td style="color:<?php echo ($fetch_users['user_type'] == 'admin') ? 'purple' : ''; ?>">
                             <?php echo $fetch_users['user_type']; ?>
                         </td>
                         <td>

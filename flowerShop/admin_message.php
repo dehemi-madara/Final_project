@@ -38,8 +38,8 @@
     <link rel="stylesheet" type="text/css" href="stylePro.css">
     <link rel="stylesheet" type="text/css" href="styleeditp.css">
     <link rel="stylesheet" type="text/css" href="styleLogin.css">
-    
-    <link rel="stylesheet" type="text/css" href="messageT.css">
+    <link rel="stylesheet" type="text/css" href="All.css">
+    <link rel="stylesheet" type="text/css"  href="messageT.css">
     <title>admin pannel</title>
 </head>
 <body>
